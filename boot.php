@@ -24,13 +24,13 @@ if (rex::isBackend() && rex::getUser()) {
     // Die style.css überall im Backend einbinden
     // Es wird eine Versionsangabe angehängt, damit nach einem neuen Release des Addons die Datei nicht
     // aus dem Browsercache verwendet, sondern frisch geladen wird
-    rex_view::addCssFile($this->getAssetsUrl('css/style.css?v=' . $this->getVersion()));
+    rex_view::addCssFile($this->getAssetsUrl('css/style.css'));
     
     if (rex_be_controller::getCurrentPagePart(2) == 'main') {
-        rex_view::addCssFile($this->getAssetsUrl('bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css?v=' . $this->getVersion()));
-        rex_view::addJsFile($this->getAssetsUrl('js/moment-with-locales.min.js?v=' . $this->getVersion()));
-        rex_view::addJsFile($this->getAssetsUrl('bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js?v=' . $this->getVersion()));
-        rex_view::addJsFile($this->getAssetsUrl('js/script-main.js?v=' . $this->getVersion()));
+        rex_view::addCssFile($this->getAssetsUrl('bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css?'));
+        rex_view::addJsFile($this->getAssetsUrl('js/moment-with-locales.min.js'));
+        rex_view::addJsFile($this->getAssetsUrl('bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js'));
+        rex_view::addJsFile($this->getAssetsUrl('js/script-main.js'));
     }
 }
 
