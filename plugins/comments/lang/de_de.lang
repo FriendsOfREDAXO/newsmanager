@@ -1,0 +1,29 @@
+comments_menu_entry = Kommentare
+comments_title = Alle Kommentare
+
+comment_title_fragment = Kommentar zu Artikel
+
+comment_tableheader_name = von
+comment_tableheader_comment = Kommentar
+comment_tableheader_createdate = erstellt am
+comment_tableheader_status = Status
+
+comment_online = online
+comment_offline = offline
+
+comment_label_comment = Kommentar
+comment_label_email = E-Mail
+comment_label_name = Name
+comment_label_article = Kommentierter Artikel
+comment_label_createdate = Vom
+
+comment_title = Kommentar 
+from = von
+
+comment_view_headline = Kommentare
+comment_view_from = Kommentar von
+comment_view_at = am
+comment_view_around = um
+comment_view_clock = Uhr
+
+comment_new_headline = Danke! Ihr Kommentar wurde gespeichert und wird vor einer Freigabe von uns geprüft!

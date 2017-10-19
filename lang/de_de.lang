@@ -1,0 +1,71 @@
+newsmanager_title = News Manager
+
+newsmanager_main = News anlegen
+newsmanager_main_title = Beiträge
+
+newsmanager_categories = Kategorien
+
+newsmanager_form_title = Titel
+newsmanager_form_article_title = Beitrag
+newsmanager_form_richtext = Artikel
+newsmanager_form_status = Status
+newsmanager_form_createdate = Datum
+newsmanager_form_language = Sprache
+newsmanager_form_seo_description = Meta Description
+newsmanager_form_seo_canonical = Canonical Link
+newsmanager_form_category_select = Kategorie
+newsmanager_form_images = Dateien
+newsmanager_form_author = Autor
+
+newsmanager_form_help_richtext = Über den Button "Linie" kann ein Artikelumbruch eingefügt werden, d.h. der Text vor dem Umbruch wird dann in der Listenansicht verwendet.
+newsmanager_form_help_images = Hier können dem Artikel mehrere Bilder hinzugefügt werden. Dabei wird das erste Bild immer als Teaserbild genommen, alle weiteren bilder werdem im Artikel selbst ausgegeben.
+newsmanager_form_help_author = Der als Standard gesetzte Autor kann über das <a href="/redaxo/index.php?page=profile">REDAXO Userprofil</a> geändert werden. Zusätzlich können Sie den Autor auch für diesen Artikel über diese Textfeld setzen.
+newsmanager_form_help_category = Mit dem Select-Feld können Sie den Artikel einer oder mehreren Kategorien zuweisen. Legen Sie weitere Kategorien im <a href="/redaxo/index.php?page=newsmanager/categories">Kategorienbereich</a> an.
+newsmanager_form_help_meta_description = Die Meta-Description (und der Seitentitel) werden in den Suchergebnissen von Suchmaschinen ausgegeben und sind die ersten Berührungspunkte Ihrer Webseite mit dem Suchenden. Hier sollten Sie sich bemühen, den Suchenden zum Klick zu animieren. Bitte beachten Sie auch die Empfehlung für die Zeichenanzahl!
+newsmanager_form_help_seo_canonical = Möchten Sie z.B. einen Artikel auf verschiedenen Webseiten mehrmals im Netz veröffentlichen, müssen alle Duplikate auf den Originalartikel verweisen (duplicate content). Geben Sie hier (sofern Ihr Artikel ein Duplikat ist) den Link zum Original an.
+
+category_form_name = Name
+
+newsmanager_config = Einstellungen
+newsmanager_config_legend1 = Einfache Felder
+newsmanager_config_url = URL
+newsmanager_config_checkbox = Checkbox
+newsmanager_config_select = Select
+newsmanager_config_multiselect = Multiselect
+
+newsmanager_config_legend2 = Medienpool, Linkmap usw.
+newsmanager_config_file = Datei
+newsmanager_config_article = Artikel
+newsmanager_config_categories = Kategorienauswahl
+newsmanager_config_pageids = Seitenauswahl
+
+newsmanager_config_save = Einstellungen speichern
+newsmanager_config_saved = Einstellungen wurden gespeichert!
+
+# Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
+
+perm_general_news[] = news[] - Rechte für News-Addon
+perm_general_news[config] = news[config] - Rechte für News-Addon-Konfiguration
+
+newsmanager_delete = löschen
+newsmanager_delete_question = Achtung: Der Beitrag wird auch in den anderen Sprachen gelöscht. Möchten Sie den Newsbeitrag wirklich löschen
+newsmanager_copy = duplizieren
+newsmanager_deleted = Der Newsbeitrag wurde gelöscht
+newsmanager_online = Live
+newsmanager_offline = Entwurf
+
+newsmanager_copied = Newseintrag wurde kopiert
+
+
+newsmanager_list_createdate = erstellt am
+
+newsmanager_error_no_post = Es gibt noch keinen Post zu diesem Thema
+newsmanager_error_headline = Fehler
+
+newsmanager_settings = Einstellungen
+newsmanager_settings_description = Hier sollten Sie festlegen, in welcher REDAXO Kategorie der Newsbereich/Blog ausgegeben wird. Zusätzlich wird ein eigenes Profil für das Redactor2 Addon angelegt (falls Sie dieses installiert haben).
+newsmanager_settings_saved = Einstellungen wurden gespeichert
+newsmanager_settings_category = Allgemeine Addon Konfiguration
+newsmanager_settings_category_label = Artikel für die Newsansicht
+newsmanager_settings_save = Einstellungen Speichern
+newsmanager_settings_error_redactor2 = Das Redactor2 Profil konnte nicht angelegt werden. Wenn Sie einen Richtext Editor in den Artikeln nutzen möchten, sollten Sie Redactor2 installieren und die Einstellungen nochmal speichern.

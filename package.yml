@@ -1,0 +1,22 @@
+# Alle hier gesetzten Werte können über $addon->getProperty($key) abgefragt werden
+
+package: newsmanager 
+version: '1.0.0'
+author: Georg Kaser 
+supportpage: https://www.georgkaser.com/redaxo-newsmanager-addon/
+
+page:
+    title: 'translate:title'
+    perm: newsmanager[]
+    icon: rex-icon fa-newspaper-o
+    subpages:
+        main: { title: 'translate:main', icon: rex-icon fa-newspaper-o }
+        categories: { title: 'translate:categories', icon: rex-icon fa-tags }
+        settings: { perm: 'newsmanagersettings[]', title: 'translate:settings', icon: rex-icon fa-wrench }
+
+requires:
+    redaxo: '>=5.4' # benötigt mindestens REDAXO 5.4
+    packages:
+        url: ^1.0.0-beta5 # benötig Addon Url
+    php:
+        version: '>=5.6' # benötigt mindestens PHP 5.6

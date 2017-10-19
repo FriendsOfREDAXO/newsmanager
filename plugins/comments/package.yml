@@ -1,0 +1,9 @@
+package: newsmanager/comments
+version: '1.0.0'
+author: 'Georg Kaser'
+supportpage: https://www.georgkaser.com/redaxo-newsmanager-addon/
+
+page:
+    title: 'translate:comments_menu_entry'
+    icon: rex-icon fa-comments-o
+    perm: newsmanager[]

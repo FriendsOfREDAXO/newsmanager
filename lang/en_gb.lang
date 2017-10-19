@@ -1,0 +1,26 @@
+news_title = News Manager
+
+news_main = Hauptseite
+news_main_title = News-Addon Titel Hauptseite
+news_main_content = Inhalt News-Addon-Seite
+
+news_config = Einstellungen
+news_config_legend1 = Einfache Felder
+news_config_url = URL
+news_config_checkbox = Checkbox
+news_config_select = Select
+news_config_multiselect = Multiselect
+
+news_config_legend2 = Medienpool, Linkmap usw.
+news_config_file = Datei
+news_config_article = Artikel
+news_config_categories = Kategorienauswahl
+news_config_pageids = Seitenauswahl
+
+news_config_save = Einstellungen speichern
+news_config_saved = Einstellungen wurden gespeichert!
+
+# Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
+
+perm_general_news[] = news[] - Rechte für News-Addon
+perm_general_news[config] = news[config] - Rechte für News-Addon-Konfiguration
