@@ -1,6 +1,8 @@
 News-Manager
 ============
 
+![Screenshot](https://raw.githubusercontent.com/georgkaser/newsmanager/master/screenshot.png)
+
 Dieses Addon stellt eine einfache Newsverwaltung bereit. Dabei werden die Beiträge in einer eigenen Tabelle abgelegt.
 
 ## Beschreibung
