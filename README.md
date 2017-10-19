@@ -41,67 +41,75 @@ Hier ein paar Beispiele für die Verwendung dieser Klassenfunktionen (Listen- un
 
 **Headerbereich:**
 
-    $newsmanager = new NewsManager();
+```php
+$newsmanager = new NewsManager();
 
-    // Mit aktiviertem Kommentarplugin:
-    // $newsmanager = new NewsManagerWithComments();
+// Mit aktiviertem Kommentarplugin:
+// $newsmanager = new NewsManagerWithComments();
 
-    $news_id = $newsmanager->getNewsIdParameter();
+$news_id = $newsmanager->getNewsIdParameter();
 
-    if ($news_id) {
+if ($news_id) {
 
-        // Artikel-Ansicht
+    // Artikel-Ansicht
+    
+    $article_post = $newsmanager->getArticleById($news_id);
+    
+    echo $article_post->getTitleTag($this->getValue('article_id'));
+    echo $article_post->getDescriptionTag();
+    echo $article_post->getCanonicalUrlTag($this->getValue('article_id'));
+    echo $article_post->getHrefLangTag ($article_post->getId());
 
-        $article_post = $newsmanager->getArticleById($news_id);
+} else {
 
-        echo $article_post->getTitleTag($this->getValue('article_id'));
-        echo $article_post->getDescriptionTag();
-        echo $article_post->getCanonicalUrlTag($this->getValue('article_id'));
-        echo $article_post->getHrefLangTag ($article_post->getId());
+    // Artikel-Listenansicht
+    
+    $seo = new rex_yrewrite_seo();
+    
+    echo $seo->getTitleTag();
+    echo $seo->getDescriptionTag();
+    echo $seo->getRobotsTag();
+    echo $seo->getHreflangTags();
+    echo $seo->getCanonicalUrlTag();
 
-    } else {
-
-        // Artikel-Listenansicht
-
-        $seo = new rex_yrewrite_seo();
-
-        echo $seo->getTitleTag();
-        echo $seo->getDescriptionTag();
-        echo $seo->getRobotsTag();
-        echo $seo->getHreflangTags();
-        echo $seo->getCanonicalUrlTag();
-
-    }
+}
+```
 
 **RSS Link** (falls gewünscht)
 
-    echo $newsmanager->getRssHeaderLink();
+```php
+echo $newsmanager->getRssHeaderLink();
+```
 
 **Artikel-Ansicht und Artikel-Listenansicht**
 
-    if ($news_id) {
+```php
+if ($news_id) {
 
-        // Artikel-Ansicht
+    // Artikel-Ansicht
+    
+    echo $newsmanager->printSingleView($article_post);
+    echo $newsmanager->getCommentList($article_post->getPid());
+    echo $newsmanager->getCommentForm($article_post->getPid());
 
-        echo $newsmanager->printSingleView($article_post);
-        echo $newsmanager->getCommentList($article_post->getPid());
-        echo $newsmanager->getCommentForm($article_post->getPid());
+} else {
 
-    } else {
+    // Artikel-Listenansicht
+    
+    echo '  <h1>' . $this->getValue("name") . '</h1>';
+    
+    // Ausgabe 10 Artikel, alle weiteren paginiert
+    
+    echo $newsmanager->printListView($this->getValue('article_id'), 10);
 
-        // Artikel-Listenansicht
-
-        echo '      <h1>' . $this->getValue("name") . '</h1>';
-
-        // Ausgabe 10 Artikel, alle weiteren paginiert
-
-        echo $newsmanager->printListView($this->getValue('article_id'), 10);
-
-    }
+}
+```
 
 **Kategorie Menü**
 
-    echo $newsmanager->printCategoryMenu();
+```php
+echo $newsmanager->printCategoryMenu();
+```
 
 Den Quellcode für die Ausgabe kann man auch anpassen.
 Es gibt dafür sog. Views, also HTML Schnipsel die in /redaxo/data/addons/newsmanager/views/ bzw. für die Kommentare
