@@ -4,6 +4,7 @@ newsmanager_main = News anlegen
 newsmanager_main_title = Beiträge
 
 newsmanager_categories = Kategorien
+newsmanager_category = Kategorie
 
 newsmanager_form_title = Titel
 newsmanager_form_article_title = Beitrag

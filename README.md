@@ -22,46 +22,46 @@ Alle zukünftige Funktionen werden über Plugins eingebunden. Das erste Plugin r
 
 ### Installation
 
-Einfach das Addon nach /redaxo/src/addons/ kopieren und im Addons Bereich installieren. 
+Einfach das Addon nach /redaxo/src/addons/ kopieren und im Addons Bereich installieren.
 
 **Das Addon benötigt folgende Addons:**
 
 * url Addon (für "sprechende" URLs)
 * redactor2 Addon (optional, macht aber Sinn wenn man Richtext im Artikel verwenden will).
 
-Das Addon enthält eine Einstellungsseite. Hier sollten Sie die Kategorie auswählen, in welcher im Startartikel die Artikelliste und die Artikelansicht ausgegben wird. 
+Das Addon enthält eine Einstellungsseite. Hier sollten Sie die Kategorie auswählen, in welcher im Startartikel die Artikelliste und die Artikelansicht ausgegben wird.
 Beim Klick auf "Einstellungen speichern" wird (falls vorhanden) ein Profil für das redactor2 Addon sowie die Einstellungen für das url Addon angelegt.
 
 ### Template anpassen
 
 Man kann natürlich einfach eine entsprechende Datenbank Abfrage machen und sich selbst um die Ausgabe kümmern. Wie das geht, kann man in der REDAXO Doku nachlesen.
 
-Es gibt aber auch Funktionen, die sich um die Ausgabe kümmern. 
-Hier ein paar Beispiele für die Verwendung dieser Klassenfunktionen (Listen- und Singleansicht in einem einzigen Template): 
+Es gibt aber auch Funktionen, die sich um die Ausgabe kümmern.
+Hier ein paar Beispiele für die Verwendung dieser Klassenfunktionen (Listen- und Singleansicht in einem einzigen Template):
 
 **Headerbereich:**
 
     $newsmanager = new NewsManager();
 
-    // Mit aktiviertem Kommentarplugin: 
+    // Mit aktiviertem Kommentarplugin:
     // $newsmanager = new NewsManagerWithComments();
 
-    $news_id = $newsmanager->getNewsIdParameter(); 
+    $news_id = $newsmanager->getNewsIdParameter();
 
     if ($news_id) {
-        
+
         // Artikel-Ansicht
 
         $article_post = $newsmanager->getArticleById($news_id);
 
-        echo $article_post->getTitleTag($this->getValue('article_id')); 
+        echo $article_post->getTitleTag($this->getValue('article_id'));
         echo $article_post->getDescriptionTag();
         echo $article_post->getCanonicalUrlTag($this->getValue('article_id'));
         echo $article_post->getHrefLangTag ($article_post->getId());
 
     } else {
 
-        // Artikel-Listenansicht 
+        // Artikel-Listenansicht
 
         $seo = new rex_yrewrite_seo();
 
@@ -74,14 +74,14 @@ Hier ein paar Beispiele für die Verwendung dieser Klassenfunktionen (Listen- un
     }
 
 **RSS Link** (falls gewünscht)
-    
+
     echo $newsmanager->getRssHeaderLink();
 
 **Artikel-Ansicht und Artikel-Listenansicht**
 
     if ($news_id) {
 
-        // Artikel-Ansicht 
+        // Artikel-Ansicht
 
         echo $newsmanager->printSingleView($article_post);
         echo $newsmanager->getCommentList($article_post->getPid());
@@ -103,6 +103,6 @@ Hier ein paar Beispiele für die Verwendung dieser Klassenfunktionen (Listen- un
 
     echo $newsmanager->printCategoryMenu();
 
-Den Quellcode für die Ausgabe kann man auch anpassen. 
-Es gibt dafür sog. Views, also HTML Schnipsel die in /redaxo/data/addons/newsmanager/views/ bzw. für die Kommentare 
+Den Quellcode für die Ausgabe kann man auch anpassen.
+Es gibt dafür sog. Views, also HTML Schnipsel die in /redaxo/data/addons/newsmanager/views/ bzw. für die Kommentare
 unter /redaxo/data/addons/newsmanager/views/comments/views/ abgelegt sind.

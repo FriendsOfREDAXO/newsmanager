@@ -54,6 +54,8 @@ if ($func == "") {
     }
     
   
+    $fragment->setVar('title', $this->i18n('categories'), false);
+    
     //$clang_id = 1;
 
     $list = rex_list::factory('SELECT pid,id,name,clang_id FROM ' . rex::getTablePrefix() . 'newsmanager_categories WHERE clang_id = '.$clang_id.' ORDER BY name ASC', 25);
@@ -83,6 +85,8 @@ if ($func == "") {
     
     $content .= $list->get();
 } elseif ($func == 'add' || $func == 'edit') {
+    
+    $fragment->setVar('title', $this->i18n('category'), false);
     
     $form = rex_form::factory(rex::getTablePrefix() . 'newsmanager_categories', '', 'pid = ' . $category_id);
     
@@ -115,6 +119,6 @@ $content .= <<<END
 END;
 
 
-$fragment->setVar('title', $this->i18n('main_title'), false);
+
 $fragment->setVar('body', $content, false);
 echo $fragment->parse('core/page/section.php');
