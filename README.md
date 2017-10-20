@@ -3,7 +3,7 @@ News-Manager
 
 ![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/newsmanager/assets/screenshot.png)
 
-Dieses Addon stellt eine einfache Newsverwaltung bereit. Dabei werden die Beiträge in einer eigenen Tabelle abgelegt.
+Dieses AddOn stellt eine einfache Newsverwaltung bereit. Dabei werden die Beiträge in einer eigenen Tabelle abgelegt.
 
 ## Beschreibung
 
@@ -22,22 +22,20 @@ Alle zukünftige Funktionen werden über Plugins eingebunden. Das erste Plugin r
 
 ### Installation
 
-Einfach das Addon nach /redaxo/src/addons/ kopieren und im Addons Bereich installieren.
+Einfach das AddOn nach `/redaxo/src/addons/` kopieren und im AddOns-Bereich installieren.
 
-**Das Addon benötigt folgende Addons:**
+**Das AddOn benötigt folgende AddOns:**
 
-* url Addon (für "sprechende" URLs)
-* redactor2 Addon (optional, macht aber Sinn wenn man Richtext im Artikel verwenden will).
+* [url Addon](https://github.com/tbaddade/redaxo_url) (für "sprechende" URLs)
+* [redactor2](https://github.com/FriendsOfREDAXO/redactor2) (optional, macht aber Sinn wenn man Richtext im Artikel verwenden will).
 
-Das Addon enthält eine Einstellungsseite. Hier sollten Sie die Kategorie auswählen, in welcher im Startartikel die Artikelliste und die Artikelansicht ausgegben wird.
-Beim Klick auf "Einstellungen speichern" wird (falls vorhanden) ein Profil für das redactor2 Addon sowie die Einstellungen für das url Addon angelegt.
+Das AddOn enthält eine Einstellungsseite. Hier sollten Sie die Kategorie auswählen, in welcher im Startartikel die Artikelliste und die Artikelansicht ausgegben wird. Beim Klick auf "Einstellungen speichern" wird (falls vorhanden) ein Profil für das redactor2-AddOn sowie die Einstellungen für das url-AddOn angelegt.
 
 ### Template anpassen
 
 Man kann natürlich einfach eine entsprechende Datenbank Abfrage machen und sich selbst um die Ausgabe kümmern. Wie das geht, kann man in der REDAXO Doku nachlesen.
 
-Es gibt aber auch Funktionen, die sich um die Ausgabe kümmern.
-Hier ein paar Beispiele für die Verwendung dieser Klassenfunktionen (Listen- und Singleansicht in einem einzigen Template):
+Es gibt aber auch Funktionen, die sich um die Ausgabe kümmern. Hier ein paar Beispiele für die Verwendung dieser Klassenfunktionen (Listen- und Singleansicht in einem einzigen Template):
 
 **Objekt erzeugen**
 
@@ -56,7 +54,6 @@ $newsmanager = new NewsManagerWithComments();
 **Headerbereich:**
 
 ```php
-
 $news_id = $newsmanager->getNewsIdParameter();
 
 if ($news_id) {
@@ -126,11 +123,12 @@ if ($news_id) {
 ```php
 echo $newsmanager->printCategoryMenu();
 ```
+
 ### Ausgabe anpassen
 
 Den Quellcode für die Ausgabe kann man auch anpassen.
-Es gibt dafür sog. Views, also HTML/PHP Schnipsel die in /redaxo/data/addons/newsmanager/views/ bzw. für die Kommentare
-unter /redaxo/data/addons/newsmanager/views/comments/views/ abgelegt sind.
+Es gibt dafür sog. Views, also HTML/PHP Schnipsel die in `/redaxo/data/addons/newsmanager/views/` bzw. für die Kommentare
+unter `/redaxo/data/addons/newsmanager/views/comments/views/` abgelegt sind.
 
 ## Lizenz
 
