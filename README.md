@@ -117,7 +117,7 @@ if ($news_id) {
 ```php
 echo $newsmanager->printCategoryMenu();
 ```
-## Ausgabe anpassen
+### Ausgabe anpassen
 
 Den Quellcode für die Ausgabe kann man auch anpassen.
 Es gibt dafür sog. Views, also HTML/PHP Schnipsel die in /redaxo/data/addons/newsmanager/views/ bzw. für die Kommentare
