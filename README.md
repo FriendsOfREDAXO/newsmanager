@@ -82,7 +82,7 @@ Nützt man das Comments-Plugin muss noch das nötige JavaScript hinzugefügt wer
 echo $newsmanager->getCommentJavaScript();
 ```
 
-**RSS Link** (falls gewünscht)
+RSS Link (falls gewünscht):
 
 ```php
 echo $newsmanager->getRssHeaderLink();
