@@ -106,6 +106,12 @@ if ($news_id) {
 }
 ```
 
+Nützt man das Comments-Plugin muss noch das nötige JavaScript hinzugefügt werden:
+
+```php
+echo $newsmanager->getCommentJavaScript();
+```
+
 **Kategorie Menü**
 
 ```php
