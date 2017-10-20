@@ -42,10 +42,11 @@ Hier ein paar Beispiele für die Verwendung dieser Klassenfunktionen (Listen- un
 **Headerbereich:**
 
 ```php
-$newsmanager = new NewsManager();
+// Ohne Kommentarplugin:
+// $newsmanager = new NewsManager();
 
-// Mit aktiviertem Kommentarplugin:
-// $newsmanager = new NewsManagerWithComments();
+// Mit Kommentarplugin:
+$newsmanager = new NewsManagerWithComments();
 
 $news_id = $newsmanager->getNewsIdParameter();
 
