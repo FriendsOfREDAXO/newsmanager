@@ -76,6 +76,12 @@ if ($news_id) {
 }
 ```
 
+Nützt man das Comments-Plugin muss noch das nötige JavaScript hinzugefügt werden:
+
+```php
+echo $newsmanager->getCommentJavaScript();
+```
+
 **RSS Link** (falls gewünscht)
 
 ```php
@@ -104,12 +110,6 @@ if ($news_id) {
     echo $newsmanager->printListView($this->getValue('article_id'), 10);
 
 }
-```
-
-Nützt man das Comments-Plugin muss noch das nötige JavaScript hinzugefügt werden:
-
-```php
-echo $newsmanager->getCommentJavaScript();
 ```
 
 **Kategorie Menü**
