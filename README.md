@@ -39,7 +39,8 @@ Man kann natürlich einfach eine entsprechende Datenbank Abfrage machen und sich
 Es gibt aber auch Funktionen, die sich um die Ausgabe kümmern.
 Hier ein paar Beispiele für die Verwendung dieser Klassenfunktionen (Listen- und Singleansicht in einem einzigen Template):
 
-**Objekt erzeugen:**
+**Objekt erzeugen**
+
 Ohne Kommentarplugin:
 
 ```php
