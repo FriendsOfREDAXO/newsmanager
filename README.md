@@ -131,3 +131,18 @@ echo $newsmanager->printCategoryMenu();
 Den Quellcode für die Ausgabe kann man auch anpassen.
 Es gibt dafür sog. Views, also HTML/PHP Schnipsel die in /redaxo/data/addons/newsmanager/views/ bzw. für die Kommentare
 unter /redaxo/data/addons/newsmanager/views/comments/views/ abgelegt sind.
+
+## Lizenz
+
+siehe [LICENSE](https://github.com/FriendsOfREDAXO/newsmanager/blob/master/LICENSE)
+
+## Autor
+
+**Friends Of REDAXO**
+
+* http://www.redaxo.org
+* https://github.com/FriendsOfREDAXO
+
+**Projekt-Lead**
+
+[Georg Kaser](https://github.com/georgkaser)
