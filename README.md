@@ -39,14 +39,22 @@ Man kann natürlich einfach eine entsprechende Datenbank Abfrage machen und sich
 Es gibt aber auch Funktionen, die sich um die Ausgabe kümmern.
 Hier ein paar Beispiele für die Verwendung dieser Klassenfunktionen (Listen- und Singleansicht in einem einzigen Template):
 
+**Objekt erzeugen:**
+Ohne Kommentarplugin:
+
+```php
+$newsmanager = new NewsManager();
+```
+
+Mit Kommentarplugin:
+
+```php
+$newsmanager = new NewsManagerWithComments();
+```
+
 **Headerbereich:**
 
 ```php
-// Ohne Kommentarplugin:
-// $newsmanager = new NewsManager();
-
-// Mit Kommentarplugin:
-$newsmanager = new NewsManagerWithComments();
 
 $news_id = $newsmanager->getNewsIdParameter();
 
