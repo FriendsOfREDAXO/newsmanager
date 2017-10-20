@@ -2,8 +2,8 @@
 
 package: newsmanager 
 version: '1.0.0'
-author: Georg Kaser 
-supportpage: https://www.georgkaser.com/redaxo-newsmanager-addon/
+author: Friends Of REDAXO 
+supportpage: https://github.com/FriendsOfREDAXO/newsmanager/
 
 page:
     title: 'translate:title'
