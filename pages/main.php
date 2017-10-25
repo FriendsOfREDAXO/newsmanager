@@ -280,6 +280,7 @@ $jScript = <<<END
     $(function () {  
         $('.datetimepicker').datetimepicker({
             defaultDate: new Date(),
+            sideBySide: true,
             locale: 'de',
             format: 'YYYY-MM-DD HH:mm'   
         });
