@@ -39,16 +39,9 @@ Es gibt aber auch Funktionen, die sich um die Ausgabe kümmern. Hier ein paar Be
 
 **Objekt erzeugen**
 
-Ohne Kommentarplugin:
 
 ```php
-$newsmanager = new NewsManager();
-```
-
-Mit Kommentarplugin:
-
-```php
-$newsmanager = new NewsManagerWithComments();
+$newsmanager = NewsManager::create();
 ```
 
 **Headerbereich:**
