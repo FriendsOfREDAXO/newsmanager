@@ -29,6 +29,17 @@ class NewsManager
             $this->category_id_parameter = UrlGenerator::getId();
         }
     }
+    
+    public static function create() {
+        
+        if (rex_addon::get('newsmanager')->getPlugin('comments')->isAvailable()) {
+            $instance = new NewsManagerWithComments();
+        } else {
+            $instance = new self();
+        }
+        
+        return $instance;
+    }
 
     /**
      * Returns the news id parameter from UrlGenerator
