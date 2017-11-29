@@ -106,6 +106,8 @@ if ($func == 'copy' && $pid > 0) {
         }
     }
 
+    UrlGenerator::generatePathFile([]);
+    
     $func = '';
 }
 
@@ -119,6 +121,8 @@ if ($func == 'status' && $pid > 0) {
         $error = $sql->getError();
     }
 
+    UrlGenerator::generatePathFile([]);
+    
     $func = '';
 }
 
