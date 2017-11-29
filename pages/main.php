@@ -56,7 +56,7 @@ if ($func == 'delete' && $id > 0) {
 }
 
 //-------------- copy news
-if ($func == 'copy' && $pid > 0) {
+if ($func == 'copy' && $pid >= 0) {
     $sql = rex_sql::factory();
     
     $lastId = $sql->getArray('SELECT MAX(id) as lastId FROM '. rex::getTablePrefix() . 'newsmanager');   
