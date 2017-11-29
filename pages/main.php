@@ -296,7 +296,7 @@ END;
     
     $content .= $jScript;
     
-    
+    UrlGenerator::generatePathFile([]);
     
 }
 
