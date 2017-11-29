@@ -338,11 +338,12 @@ class NewsManager
 
         $pagemenu = '<ul>';
         for ($page = $pager->getFirstPage(); $page <= $pager->getLastPage(); ++$page) {
+            $class = ($pager->isActivePage($page)) ? ' active' : '';
             if ($this->category_id_parameter) {
                 $pagemenu .= '<li>
-                    <a href="' . rex_getUrl(rex_article::getCurrentId(), '', [$pager->getCursorName() => $pager->getCursor($page), 'category' => $this->category_id_parameter]) . '">' . ($page + 1) . '</a></li>';
+                    <a class="'. $class .'" href="' . rex_getUrl(rex_article::getCurrentId(), '', [$pager->getCursorName() => $pager->getCursor($page), 'category' => $this->category_id_parameter]) . '">' . ($page + 1) . '</a></li>';
             } else {
-                $pagemenu .= '<li><a href="' . rex_getUrl(rex_article::getCurrentId(), '', [$pager->getCursorName() => $pager->getCursor($page)]) . '">' . ($page + 1) . '</a></li>';
+                $pagemenu .= '<li><a class="'. $class .'" href="' . rex_getUrl(rex_article::getCurrentId(), '', [$pager->getCursorName() => $pager->getCursor($page)]) . '">' . ($page + 1) . '</a></li>';
             }
         }
 
