@@ -56,13 +56,13 @@ if ($func == 'delete' && $id > 0) {
 }
 
 //-------------- copy news
-if ($func == 'copy' && $pid >= 0) {
+if ($func == 'copy' && $pid > 0) {
     $sql = rex_sql::factory();
     
     $lastId = $sql->getArray('SELECT MAX(id) as lastId FROM '. rex::getTablePrefix() . 'newsmanager');   
     $lastId = $lastId[0]['lastId'] + 1;
     
-    if (count(rex_clang::getAll(1))>1) {
+    if (count(rex_clang::getAll(1))>=1) {
         foreach(rex_clang::getAll(1) as $key => $lang) {
             try {
                 $query = 'INSERT INTO '. rex::getTablePrefix() . 'newsmanager '
