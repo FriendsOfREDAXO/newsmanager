@@ -191,10 +191,10 @@ class NewsManagerArticle
 
     public function setTeaserText($richtext)
     {
-        if (($richtext) && (strpos($richtext, '<hr>'))) {
-            $this->teasertext = substr($richtext, 0, strpos($richtext, '<hr>'));
-        } else {
-            $this->teasertext = '<p>' . substr(strip_tags($richtext), 0, 300) . '...</p>';
+        if (($richtext) && (strpos($richtext, '<hr>'))) { 
+            $this->teasertext = str_replace('<hr>', '', substr($richtext, 0, strpos($richtext, '<hr>')));
+        } else {     
+            $this->teasertext = '<p>' . preg_replace("/[^ ]*$/", '', mb_substr(strip_tags($richtext), 0, 28)).'...</p>';
         }
     }
 
