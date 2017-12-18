@@ -9,6 +9,26 @@
 
 // Klassen und lang-Dateien müssen hier nicht mehr eingebunden werden, sie werden nun automatisch gefunden.
 
+$currentLanguage = rex_clang::getCurrentId();
+$languageCode = rex_clang::getAll()[$currentLanguage]->getCode(); 
+
+switch ($languageCode) {
+    case 'de':
+        setlocale (LC_TIME, 'de_DE');
+        break;
+    case 'en':
+        setlocale (LC_TIME, 'en_GB');
+        break;
+    case 'fr':
+        setlocale (LC_TIME, 'fr_FR');
+        break;
+    case 'it':
+        setlocale (LC_TIME, 'it_IT');
+        break;
+    default:
+        setlocale (LC_TIME, 'en_GB');
+}
+
 // Addonrechte (permissions) registieren
 if (rex::isBackend() && is_object(rex::getUser())) {
     rex_perm::register('newsmanager[]');
