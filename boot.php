@@ -14,19 +14,19 @@ $languageCode = rex_clang::getAll()[$currentLanguage]->getCode();
 
 switch ($languageCode) {
     case 'de':
-        setlocale (LC_TIME, 'de_DE');
+        setlocale (LC_TIME, 'de_DE.utf-8');
         break;
     case 'en':
-        setlocale (LC_TIME, 'en_GB');
+        setlocale (LC_TIME, 'en_GB.utf-8');
         break;
     case 'fr':
-        setlocale (LC_TIME, 'fr_FR');
+        setlocale (LC_TIME, 'fr_FR.utf-8');
         break;
     case 'it':
-        setlocale (LC_TIME, 'it_IT');
+        setlocale (LC_TIME, 'it_IT.utf-8');
         break;
     default:
-        setlocale (LC_TIME, 'en_GB');
+        setlocale (LC_TIME, 'en_GB.utf-8');
 }
 
 // Addonrechte (permissions) registieren
