@@ -100,6 +100,7 @@ class NewsManager
         $newsArticle->setStatus($result->getValue('status'));
         $newsArticle->setNewsmanager_category_id($result->getValue('newsmanager_category_id'));
         $newsArticle->setTitle($result->getValue('title'));
+        $newsArticle->setSubtitle($result->getValue('subtitle'));    
         $newsArticle->setRichtext($result->getValue('richtext'));
         $newsArticle->setImages($result->getValue('images'));
         $newsArticle->setSeo_description($result->getValue('seo_description'));
@@ -267,6 +268,7 @@ class NewsManager
             }
             $output .= $this->tpl->render($suggestions, array(
                 'title' => $newsArticle->getTitle(),
+                'subtitle' => $newsArticle->getSubtitle(),
                 'createdate' => strftime('%A, %e. %B %Y', strtotime($newsArticle->getCreatedate())),
                 'richtext' => $richtext_with_image,
                 'author' => $newsArticle->getAuthor()
