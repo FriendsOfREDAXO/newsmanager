@@ -7,6 +7,7 @@ newsmanager_categories = Kategorien
 newsmanager_category = Kategorie
 
 newsmanager_form_title = Titel
+newsmanager_form_subtitle = Untertitel
 newsmanager_form_article_title = Beitrag
 newsmanager_form_richtext = Artikel
 newsmanager_form_status = Status
