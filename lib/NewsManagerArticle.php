@@ -14,6 +14,7 @@ class NewsManagerArticle
     private $status;
     private $newsmanager_category_id;
     private $title;
+    private $subtitle; 
     private $richtext;
     private $images;
     private $seo_description;
@@ -55,7 +56,11 @@ class NewsManagerArticle
     {
         return $this->title;
     }
-
+        
+        public function getSubtitle()
+    {
+        return $this->subtitle;  
+    }
     public function getRichtext()
     {
         return $this->richtext;
@@ -289,6 +294,7 @@ class NewsManagerArticle
 
         $output .= $this->tpl->render($suggestions, array(
             'title' => $post->getTitle(),
+            'subtitle' => $this->getSubtitle(), 
             'createdate' => strftime('%A, %e. %B %Y', strtotime($post->getCreatedate())),
             'url' => $this->getUrl(),
             'teasertext' => $this->getTeaserText(),
