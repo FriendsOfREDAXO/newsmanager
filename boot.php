@@ -47,7 +47,7 @@ if (rex::isBackend() && rex::getUser()) {
     rex_view::addCssFile($this->getAssetsUrl('css/style.css'));
     
     if (rex_be_controller::getCurrentPagePart(2) == 'main') {
-        rex_view::addCssFile($this->getAssetsUrl('bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css?'));
+        rex_view::addCssFile($this->getAssetsUrl('bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css'));
         rex_view::addJsFile($this->getAssetsUrl('js/moment-with-locales.min.js'));
         rex_view::addJsFile($this->getAssetsUrl('bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js'));
         rex_view::addJsFile($this->getAssetsUrl('js/script-main.js'));
