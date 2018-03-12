@@ -77,3 +77,15 @@ Sie haben auch noch die Möglichkeit die Kategorien als Menü auszugeben. Verwen
     <?php echo $newsmanager->printCategoryMenu(); ?>
 </aside>
 ```
+Die Ausgabe einer Teaserliste mit Headline und Subhead als Modul. Verwenden Sie dafür diesen Codeschnipsel als Modulausgabe:
+```
+<?php
+// Ausgabe der Newsartikel
+$newsmanager = '';
+$newsmanager = new NewsManager();
+// Listenansicht
+echo $newsmanager->printTeaserListView($this->getValue('article_id'),2);
+?>
+```
+
+
