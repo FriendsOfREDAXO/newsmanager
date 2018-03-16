@@ -85,6 +85,7 @@ if ($func == 'copy' && $pid > 0) {
                         . $lastId .', '
                         . '`newsmanager_category_id`, '
                         . 'CONCAT("Kopie_", title) , '
+                        . '`subtitle`, '
                         . '`richtext`, '
                         . '`images`, '
                         . '`seo_description`, '
