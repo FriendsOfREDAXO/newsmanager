@@ -144,6 +144,11 @@ class NewsManagerArticle
         $this->title = $title;
     }
 
+    public function setSubtitle($subtitle)
+    {
+        $this->subtitle = $subtitle;
+    }
+    
     public function setRichtext($richtext)
     {
         $this->richtext = $richtext;
