@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS `%TABLE_PREFIX%newsmanager` (
     `status` tinyint(1) DEFAULT '0',
     `newsmanager_category_id` varchar(255) DEFAULT NULL,
     `title` varchar(255) NOT NULL DEFAULT '',
+    `subtitle` varchar(255) NOT NULL DEFAULT '',
     `richtext` text,
     `images` text,
     `seo_description` varchar(255) NOT NULL DEFAULT '',

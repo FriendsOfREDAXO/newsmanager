@@ -14,7 +14,7 @@ class NewsManagerArticle
     private $status;
     private $newsmanager_category_id;
     private $title;
-    private $subtitle; 
+    private $subtitle;
     private $richtext;
     private $images;
     private $seo_description;
@@ -56,11 +56,12 @@ class NewsManagerArticle
     {
         return $this->title;
     }
-        
+  
         public function getSubtitle()
     {
-        return $this->subtitle;  
+        return $this->subtitle;
     }
+
     public function getRichtext()
     {
         return $this->richtext;
@@ -144,7 +145,7 @@ class NewsManagerArticle
         $this->title = $title;
     }
 
-    public function setSubtitle($subtitle)
+    public function setSubitle($subtitle)
     {
         $this->subtitle = $subtitle;
     }

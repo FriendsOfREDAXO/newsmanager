@@ -70,6 +70,7 @@ if ($func == 'copy' && $pid > 0) {
                         . '`id`, '
                         . '`newsmanager_category_id`, '
                         . '`title`, '
+                        . '`subtitle`, '
                         . '`richtext`, '
                         . '`images`, '
                         . '`seo_description`, '
@@ -84,6 +85,7 @@ if ($func == 'copy' && $pid > 0) {
                         . $lastId .', '
                         . '`newsmanager_category_id`, '
                         . 'CONCAT("Kopie_", title) , '
+                        . '`subtitle`, '
                         . '`richtext`, '
                         . '`images`, '
                         . '`seo_description`, '
@@ -227,6 +229,10 @@ return $str;'
     $field = $form->addFieldset('Artikel');
     $field = $form->addTextField('title');
     $field->setLabel(rex_i18n::msg('newsmanager_form_title'));
+
+    $field = $form->addTextField('subtitle');    /* 2018-01-18-TB */
+    $field->setLabel(rex_i18n::msg('newsmanager_form_subtitle'));
+    
     
     $field = $form->addTextField('createdate', null, array('class'=>'form-control datetimepicker'));
     $field->setLabel(rex_i18n::msg('newsmanager_form_createdate'));

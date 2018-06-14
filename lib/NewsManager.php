@@ -100,6 +100,7 @@ class NewsManager
         $newsArticle->setStatus($result->getValue('status'));
         $newsArticle->setNewsmanager_category_id($result->getValue('newsmanager_category_id'));
         $newsArticle->setTitle($result->getValue('title'));
+        $newsArticle->setSubtitle($result->getValue('subtitle'));    
         $newsArticle->setRichtext($result->getValue('richtext'));
         $newsArticle->setImages($result->getValue('images'));
         $newsArticle->setSeo_description($result->getValue('seo_description'));
@@ -206,6 +207,39 @@ class NewsManager
 
         return $newsArticle;
     }
+    
+
+    
+    /**
+     * Generates a list view of the articles from a template (article-teaser-list-view.php)
+     *
+     * @param NewsManagerArticle $newsArticle Article object
+     * @return string markup of the article teaser list view
+     */
+    public function printTeaserListView($singleViewArticleId, $limit = 0)
+    {
+        $TeaserlistView_output = '';
+        $teasernewslist = '';
+
+        $suggestions = array('article-teaser-list-view');
+
+        $posts = $this->getArticleObjectList($limit);
+
+        foreach ($posts as $post) {
+            if ($post instanceof NewsManagerArticle) {
+                $teasernewslist .= $post->printArticleTeaserList($post, $newsArticle);
+            }
+        }
+
+        $TeaserlistView_output .= $this->tpl->render($suggestions, array(
+                     'teasernewslist' => $teasernewslist
+            ));
+
+        return '<ul>'.$TeaserlistView_output.'</ul>';
+    }
+    
+           
+    
 
     public function printListView($singleViewArticleId, $limit = 0)
     {
@@ -261,14 +295,18 @@ class NewsManager
                 }
             }
             if (strpos($newsArticle->getRichtext(), '<hr>')) {
-                $richtext_with_image = str_replace('<hr>', $image, $newsArticle->getRichtext());
+//              $richtext_with_image = str_replace('<hr>', $image, $newsArticle->getRichtext());
+                $richtext = str_replace('<hr>', $image, $newsArticle->getRichtext());
             } else {
-                $richtext_with_image = $newsArticle->getRichtext() . $image;
+//              $richtext_with_image = $newsArticle->getRichtext() . $image; // Ausgabe von Text und Bild unabhängig
+                $richtext = $newsArticle->getRichtext();   
             }
             $output .= $this->tpl->render($suggestions, array(
                 'title' => $newsArticle->getTitle(),
+                'subtitle' => $newsArticle->getSubtitle(),
                 'createdate' => strftime('%A, %e. %B %Y', strtotime($newsArticle->getCreatedate())),
-                'richtext' => $richtext_with_image,
+                'richtext' => $richtext,
+                'image' => $image,
                 'author' => $newsArticle->getAuthor()
             ));
         } else {
