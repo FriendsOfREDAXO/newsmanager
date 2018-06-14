@@ -56,7 +56,7 @@ class NewsManagerArticle
     {
         return $this->title;
     }
-    
+  
         public function getSubtitle()
     {
         return $this->subtitle;
@@ -300,6 +300,7 @@ class NewsManagerArticle
 
         $output .= $this->tpl->render($suggestions, array(
             'title' => $post->getTitle(),
+            'subtitle' => $this->getSubtitle(), 
             'createdate' => strftime('%A, %e. %B %Y', strtotime($post->getCreatedate())),
             'url' => $this->getUrl(),
             'teasertext' => $this->getTeaserText(),
@@ -310,4 +311,20 @@ class NewsManagerArticle
 
         return $output;
     }
+    public function printArticleTeaserList($post, $newsArticle)
+    {
+        $output = '';
+
+
+        $suggestions = array('article-teaser-list');
+
+        
+        $output .= $this->tpl->render($suggestions, array(
+            'title' => $post->getTitle(),
+           'subtitle' => $this->getSubtitle(), 
+            'url' => $this->getUrl()
+                ));
+
+        return $output;
+    }    
 }
