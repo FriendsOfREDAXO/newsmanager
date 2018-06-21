@@ -37,24 +37,23 @@ Man kann natürlich einfach eine entsprechende Datenbank Abfrage machen und sich
 
 Es gibt aber auch Funktionen, die sich um die Ausgabe kümmern. Hier ein paar Beispiele für die Verwendung dieser Klassenfunktionen (Listen- und Singleansicht in einem einzigen Template):
 
-**Objekt erzeugen**
-
-
-```php
-$newsmanager = NewsManager::create();
-```
 
 **Headerbereich:**
 
 ```php
+$newsmanager = new NewsManager();
+
+// Mit aktiviertem Kommentarplugin:
+// $newsmanager = new NewsManagerWithComments();
+
 $news_id = $newsmanager->getNewsIdParameter();
 
 if ($news_id) {
 
     // Artikel-Ansicht
-    
+
     $article_post = $newsmanager->getArticleById($news_id);
-    
+
     echo $article_post->getTitleTag($this->getValue('article_id'));
     echo $article_post->getDescriptionTag();
     echo $article_post->getCanonicalUrlTag($this->getValue('article_id'));
@@ -63,9 +62,9 @@ if ($news_id) {
 } else {
 
     // Artikel-Listenansicht
-    
+
     $seo = new rex_yrewrite_seo();
-    
+
     echo $seo->getTitleTag();
     echo $seo->getDescriptionTag();
     echo $seo->getRobotsTag();
