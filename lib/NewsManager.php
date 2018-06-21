@@ -100,7 +100,7 @@ class NewsManager
         $newsArticle->setStatus($result->getValue('status'));
         $newsArticle->setNewsmanager_category_id($result->getValue('newsmanager_category_id'));
         $newsArticle->setTitle($result->getValue('title'));
-        $newsArticle->setSubtitle($result->getValue('subtitle'));    
+//        $newsArticle->setSubtitle($result->getValue('subtitle'));    
         $newsArticle->setRichtext($result->getValue('richtext'));
         $newsArticle->setImages($result->getValue('images'));
         $newsArticle->setSeo_description($result->getValue('seo_description'));
