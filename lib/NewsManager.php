@@ -240,7 +240,13 @@ class NewsManager
     
            
     
-
+    
+    /**
+     * Generates the list view of the articles from a template (article-list-view.php)
+     *
+     * @param NewsManagerArticle $newsArticle Article object
+     * @return string markup of the article list view
+     */
     public function printListView($singleViewArticleId, $limit = 0)
     {
         $listView_output = '';
@@ -287,9 +293,9 @@ class NewsManager
                 } else {
                     $image = '<div id="images">' . PHP_EOL;
                     foreach ($images as $key => $value) {
-                        $image .= '<div id="image-' . $key . '" class="image">' . PHP_EOL;
+//                        $image .= '<div id="image-' . $key . '" class="image">' . PHP_EOL;
                         $image .= $newsArticle->makeImage($value);
-                        $image .= '</div>' . PHP_EOL;
+//                        $image .= '</div>' . PHP_EOL;
                     }
                     $image .= '</div>' . PHP_EOL;
                 }
@@ -301,6 +307,9 @@ class NewsManager
 //              $richtext_with_image = $newsArticle->getRichtext() . $image; // Ausgabe von Text und Bild unabhängig
                 $richtext = $newsArticle->getRichtext();   
             }
+            
+$richtext = $newsArticle->getRichtext();
+            
             $output .= $this->tpl->render($suggestions, array(
                 'title' => $newsArticle->getTitle(),
                 'subtitle' => $newsArticle->getSubtitle(),
