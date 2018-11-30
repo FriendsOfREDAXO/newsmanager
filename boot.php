@@ -34,6 +34,6 @@ if (rex::isBackend() && rex::getUser()) {
     }
 }
 
-rex_extension::register('REX_FORM_SAVED', array('NewsManager', 'generateRssFeeds'), rex_extension::LATE);
-rex_extension::register('REX_FORM_DELETED', array('NewsManager', 'generateRssFeeds'), rex_extension::LATE);
-rex_extension::register('REX_LIST_GET', array('NewsManager', 'generateRssFeeds'), rex_extension::LATE);
+rex_extension::register('REX_FORM_SAVED', array('NewsManager::generateRssFeeds'), rex_extension::LATE);
+rex_extension::register('REX_FORM_DELETED', array('NewsManager::generateRssFeeds'), rex_extension::LATE);
+rex_extension::register('REX_LIST_GET', array('NewsManager::generateRssFeeds'), rex_extension::LATE);
