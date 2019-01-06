@@ -76,7 +76,7 @@ class NewsManagerWithComments extends NewsManager
         
         $suggestions = array('article-commentform-view');
         $commentform = $this->commenttpl->render($suggestions, array(
-            'articleId' => $article_id 
+            'article_id' => $article_id 
         ));
         return $commentform;
     }
