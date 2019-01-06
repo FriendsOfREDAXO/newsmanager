@@ -57,7 +57,7 @@ if (rex_post('formsubmit', 'string') == '1') {
     if (rex_addon::get('redactor2')->isAvailable()) {
        
         if (!redactor2::profileExists('newsmanager')) {
-            redactor2::insertProfile('newsmanager', 'Angelegt durch das News-Manager Addon', '300', '800', 'relative','groupheading[2|3|4|5|6],paragraph,bold, italic, underline,deleted, sub, sup,  unorderedlist, orderedlist,video,media,grouplink[email|external|internal|media|telephone], cleaner,horizontalrule,source,fullscreen');
+            redactor2::insertProfile('newsmanager', 'Angelegt durch das News-Manager Addon', '300', '800', 'relative', '0', '0', '0', '1','groupheading[2|3|4|5|6],paragraph,bold, italic, underline,deleted, sub, sup,  unorderedlist, orderedlist,video,media,grouplink[email|external|internal|media|telephone], cleaner,horizontalrule,source,fullscreen');
             echo rex_view::success('Das nötige Redactor2-Profil wurde angelegt');
         }
         
