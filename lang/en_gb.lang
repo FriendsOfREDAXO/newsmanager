@@ -1,26 +1,73 @@
-news_title = News Manager
+newsmanager_title = News manager
 
-news_main = Hauptseite
-news_main_title = News-Addon Titel Hauptseite
-news_main_content = Inhalt News-Addon-Seite
+newsmanager_main = Add news
+newsmanager_main_title = Articles
 
-news_config = Einstellungen
-news_config_legend1 = Einfache Felder
-news_config_url = URL
-news_config_checkbox = Checkbox
-news_config_select = Select
-news_config_multiselect = Multiselect
+newsmanager_categories = Categories
+newsmanager_category = Category
 
-news_config_legend2 = Medienpool, Linkmap usw.
-news_config_file = Datei
-news_config_article = Artikel
-news_config_categories = Kategorienauswahl
-news_config_pageids = Seitenauswahl
+newsmanager_form_title = Title
+newsmanager_form_subtitle = Sub title
+newsmanager_form_article_title = Article
+newsmanager_form_richtext = Article
+newsmanager_form_status = Status
+newsmanager_form_createdate = Date
+newsmanager_form_language = Language
+newsmanager_form_seo_description = Meta descriptions
+newsmanager_form_seo_canonical = Canonical link
+newsmanager_form_category_select = Category
+newsmanager_form_images = Files
+newsmanager_form_author = Author
 
-news_config_save = Einstellungen speichern
-news_config_saved = Einstellungen wurden gespeichert!
+newsmanager_form_help_richtext = Button "line" adds an article break. Everything before the break will be shown in the list view.
+newsmanager_form_help_images = Multiple images can be added. The first image acts as the articles teaser image, all other images will be shown in the article itself.
+newsmanager_form_help_author = The default author can be changed in the <a href="/redaxo/index.php?page=profile">REDAXO user profile</a>. The author can also be overriden using this field.
+newsmanager_form_help_category = Assign the article to one or more categories. Add more categories in the <a href="/redaxo/index.php?page=newsmanager/categories">category section</a>
+newsmanager_form_help_meta_description = Meta description (and page title) are shown in search engines and are the first entry point to a website. Note the recommendation for the maximum number of characters.
+newsmanager_form_help_seo_canonical = To avoid duplicate content enter the link to the original article, if this is a duplicate.
+
+category_form_name = Name
+
+newsmanager_config = Settings
+newsmanager_config_legend1 = Simple fields
+newsmanager_config_url = URL
+newsmanager_config_checkbox = Checkbox
+newsmanager_config_select = Select
+newsmanager_config_multiselect = Multi select
+
+newsmanager_config_legend2 = Mediapool, Linkmap etc.
+newsmanager_config_file = File
+newsmanager_config_article = Article
+newsmanager_config_categories = Category selection
+newsmanager_config_pageids = Page selection
+
+newsmanager_config_save = Save settings
+newsmanager_config_saved = Settings saved!
 
 # Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
 
-perm_general_news[] = news[] - Rechte für News-Addon
-perm_general_news[config] = news[config] - Rechte für News-Addon-Konfiguration
+perm_general_news[] = news[] - Permissions for News-Addon
+perm_general_news[config] = news[config] - Permissions for News-Addon configuration
+
+newsmanager_delete = delete
+newsmanager_delete_question = Warning: the article will be deleted for all languages. Are you sure you want to delete the article?
+newsmanager_copy = duplicate
+newsmanager_deleted = The news article has been deleted
+newsmanager_online = Live
+newsmanager_offline = Draft
+
+newsmanager_copied = Entry duplicated
+
+
+newsmanager_list_createdate = Created
+
+newsmanager_error_no_post = There is currently no post in this category
+newsmanager_error_headline = Error
+
+newsmanager_settings = Settings
+newsmanager_settings_description = Choose in which REDAXO category to output the news entries. Additionally a custom Redactor2 profile will be created (if the Redactor2 addon is installed).
+newsmanager_settings_saved = Settings saved.
+newsmanager_settings_category = General addon configuration
+newsmanager_settings_category_label = Article for news view
+newsmanager_settings_save = Save settings
+newsmanager_settings_error_redactor2 = The Redactor2 profile could not be created. If you would like to use a richtext editor, please install Redactor2 and save these settings again.

@@ -1,0 +1,29 @@
+comments_menu_entry = Comments
+comments_title = All comments
+
+comment_title_fragment = Comment article
+
+comment_tableheader_name = from
+comment_tableheader_comment = Comment
+comment_tableheader_createdate = Created
+comment_tableheader_status = Status
+
+comment_online = online
+comment_offline = offline
+
+comment_label_comment = Comment
+comment_label_email = E-Mail
+comment_label_name = Name
+comment_label_article = Article commented on
+comment_label_createdate = from
+
+comment_title = Comment
+from = from
+
+comment_view_headline = Comments
+comment_view_from = Comment by
+comment_view_at = on
+comment_view_around = at
+comment_view_clock = o'clock
+
+comment_new_headline = Thank you! We've received your comment, it will be published after a review!
