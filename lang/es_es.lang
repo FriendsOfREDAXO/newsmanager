@@ -1,0 +1,73 @@
+newsmanager_title = Gestor de noticias
+
+newsmanager_main = Crear noticias
+newsmanager_main_title = Mensajes
+
+newsmanager_categories = Categorías
+newsmanager_category = Categoría
+
+newsmanager_form_title = Título
+newsmanager_form_subtitle = Subtítulo
+newsmanager_form_article_title = Contribución
+newsmanager_form_richtext = Artículo
+newsmanager_form_status = Estado
+newsmanager_form_createdate = Fecha
+newsmanager_form_language = Idioma
+newsmanager_form_seo_description = Metadescripción
+newsmanager_form_seo_canonical = Enlace canónico
+newsmanager_form_category_select = Categoría
+newsmanager_form_images = Archivos
+newsmanager_form_author = Autor
+
+newsmanager_form_help_richtext = El botón "Línea" se puede usar para insertar un salto de artículo, es decir, el texto anterior al salto se usa en la vista de lista.
+newsmanager_form_help_images = Aquí puedes agregar varias fotos al artículo. La primera imagen siempre se toma como una imagen de prueba, todas las demás imágenes se mostrarán en el propio artículo.
+newsmanager_form_help_author = El autor predeterminado se puede cambiar a través del <a href="/redaxo/index.php?page=profile">Perfil de usuario de REDAXO</a>. Además, puede colocar el autor también para este artículo en este campo de texto.
+newsmanager_form_help_category = Utilice el campo Seleccionar para asignar el artículo a una o más categorías. Cree categorías adicionales en la sección <a href="/redaxo/index.php?page=newsmanager/categories">categoría</a>.
+newsmanager_form_help_meta_description = La meta descripción (y el título de la página) se muestran en los resultados de búsqueda de los motores de búsqueda y son los primeros puntos de contacto de su sitio web con el buscador. Aquí deberías intentar animar al buscador a hacer clic. Tenga en cuenta también la recomendación para el número de caracteres!
+newsmanager_form_help_seo_canonical = Si, por ejemplo, desea publicar un artículo en varios sitios web varias veces a través de Internet, todos los duplicados deben referirse al artículo original (contenido duplicado). Ingrese aquí (si su artículo es un duplicado) el enlace al original.
+
+category_form_name = Nombre
+
+newsmanager_config = Ajustes
+newsmanager_config_legend1 = Campos simples
+newsmanager_config_url = URL
+newsmanager_config_checkbox = Caja
+newsmanager_config_select = Seleccionar
+newsmanager_config_multiselect = Selección múltiple
+
+newsmanager_config_legend2 = Grupo de medios, linkmap, etc.
+newsmanager_config_file = Expediente
+newsmanager_config_article = Artículo
+newsmanager_config_categories = Selección de categoría
+newsmanager_config_pageids = Selección de páginas
+
+newsmanager_config_save = Guardar configuraciones
+newsmanager_config_saved = Los ajustes se han guardado!
+
+# Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
+
+perm_general_news[] = noticias[] - Derechos para el complemento de noticias
+perm_general_news[config] = news[config] - Derechos para la configuración del complemento de noticias
+
+newsmanager_delete = Borrar
+newsmanager_delete_question = Atención: La contribución se eliminará también en los otros idiomas. ¿Realmente quieres borrar el artículo de noticias?
+newsmanager_copy = Duplicar
+newsmanager_deleted = El reportaje ha sido eliminado.
+newsmanager_online = En linea
+newsmanager_offline = Desconectado
+
+newsmanager_copied = Nueva entrada ha sido copiada
+
+
+newsmanager_list_createdate = Creado en
+
+newsmanager_error_no_post = Aún no hay ninguna publicación sobre este tema.
+newsmanager_error_headline = Error
+
+newsmanager_settings = Ajustes
+newsmanager_settings_description = Aquí debe especificar en qué categoría de REDAXO se muestra la sección de noticias / blog. Además, se crea un perfil separado para el complemento Redactor2 (si tiene este instalado).
+newsmanager_settings_saved = Los ajustes se han guardado
+newsmanager_settings_category = Configuración de complemento general
+newsmanager_settings_category_label = Artículo para el newsview
+newsmanager_settings_save = Guardar configuraciones
+newsmanager_settings_error_redactor2 = No se pudo crear el perfil Redactor2. Si desea utilizar un editor de texto enriquecido en los artículos, debe instalar Redactor2 y guardar la configuración nuevamente.
