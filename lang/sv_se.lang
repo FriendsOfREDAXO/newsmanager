@@ -1,0 +1,73 @@
+newsmanager_title = News Manager
+
+newsmanager_main = Skapa news
+newsmanager_main_title = Inlägg
+
+newsmanager_categories = Kategorier
+newsmanager_category = Kategori
+
+newsmanager_form_title = Titel
+newsmanager_form_subtitle = Subrubrik
+newsmanager_form_article_title = Inlägg
+newsmanager_form_richtext = Artikel
+newsmanager_form_status = Status
+newsmanager_form_createdate = Datum
+newsmanager_form_language = Språk
+newsmanager_form_seo_description = Meta Description
+newsmanager_form_seo_canonical = Canonical Link
+newsmanager_form_category_select = Kategori
+newsmanager_form_images = Filer
+newsmanager_form_author = Autor
+
+newsmanager_form_help_richtext = Via knappen "Linje" kan en artikelbrytning införas, i. Texten före ombrytning används sedan i listvy.
+newsmanager_form_help_images = Här kan du lägga till flera bilder till artikeln. Den första bilden tas alltid som en teaserbild, alla andra bilder blir utmatade i själva artikeln.
+newsmanager_form_help_author = Standardförfattaren kan ändras via <a href="/redaxo/index.php?page=profile"> REDAXO användarprofil </a>. Dessutom kan du lägga författaren också till den här artikeln i det här textfältet.
+newsmanager_form_help_category = Använd select-fältet för att tilldela artikeln till en eller flera kategorier. Skapa ytterligare kategorier i <a href="/redaxo/index.php?page=newsmanager/categories"> kategoriavsnittet </a>.
+newsmanager_form_help_meta_description = Meta-beskrivningen (och sidtiteln) visas i sökresultaten av sökmotorer och är de första kontaktpunkterna på din webbplats med sökaren. Här bör du göra en ansträngning för att animera sökaren att klicka. Observera också rekommendationen för antalet tecken!
+newsmanager_form_help_seo_canonical =  För att publicera en artikel på olika webbplatser flera gånger på nätet, måste alla dubbletter referera till den ursprungliga artikeln (duplikat innehåll). Skriv här (om din artikel är en kopia) länken till originalet.
+
+category_form_name = Namn
+
+newsmanager_config = Inställningar
+newsmanager_config_legend1 = Enkla fält
+newsmanager_config_url = URL
+newsmanager_config_checkbox = Checkbox
+newsmanager_config_select = Select
+newsmanager_config_multiselect = Multiselect
+
+newsmanager_config_legend2 = Medienpool, Linkmap etc.
+newsmanager_config_file = Fil
+newsmanager_config_article = Artikel
+newsmanager_config_categories = Kategoriurval
+newsmanager_config_pageids = Sidurval
+
+newsmanager_config_save = Spara inställningarna
+newsmanager_config_saved = Inställningarna sparades
+
+# Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
+
+perm_general_news[] = news[] - Rättigheter till News-Addon
+perm_general_news[config] = news[config] - Rättigheter till News-Addon-Konfiguration
+
+newsmanager_delete = radera
+newsmanager_delete_question = OBS: Bidraget kommer också att raderas på övriga språk. Vill du verkligen ta bort artikeln?
+newsmanager_copy = Duplicera
+newsmanager_deleted = Newsinlägg raderades
+newsmanager_online = Live
+newsmanager_offline = Utkast
+
+newsmanager_copied = Newsinlägg kopierades
+
+
+newsmanager_list_createdate = skapades den
+
+newsmanager_error_no_post = Det finns inget inlägg på detta ämne än
+newsmanager_error_headline = Fel
+
+newsmanager_settings = Inställningar
+newsmanager_settings_description = Här ska du ange i vilken REDAXO-kategori nyheterna / bloggen visas. Dessutom skapas en separat profil för Redactor2 addon (om du har det installerat).
+newsmanager_settings_saved = Inställningarna har sparats
+newsmanager_settings_category = Allmän addon-konfiguration
+newsmanager_settings_category_label = Artikel för newsview
+newsmanager_settings_save = Spara inställningar
+newsmanager_settings_error_redactor2 = error_redactor2 Redactor2-profilen kunde inte skapas. Om du vill använda en Richtext-editor i artiklarna, bör du installera Redactor2 och spara inställningarna igen.

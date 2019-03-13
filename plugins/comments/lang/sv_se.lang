@@ -1,0 +1,29 @@
+comments_menu_entry = Kommentarer
+comments_title = Alla kommentarer
+
+comment_title_fragment = Kommentar till artikel
+
+comment_tableheader_name = från
+comment_tableheader_comment = Kommentar
+comment_tableheader_createdate = Skapat den
+comment_tableheader_status = Status
+
+comment_online = online
+comment_offline = offline
+
+comment_label_comment = Kommentar
+comment_label_email = E-post
+comment_label_name = Namn
+comment_label_article = Kommenterad artikel
+comment_label_createdate = från
+
+comment_title = Kommentar
+from = från
+
+comment_view_headline = Kommentarer
+comment_view_from = Kommentar från
+comment_view_at = den
+comment_view_around = vid
+comment_view_clock = Klocka
+
+comment_new_headline = Tack! Din kommentar har sparats och kommer att granskas av oss innan godkännande!
