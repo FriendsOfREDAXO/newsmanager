@@ -1,0 +1,29 @@
+comments_menu_entry = Comentarios
+comments_title = Todos los comentarios
+
+comment_title_fragment = Comentar el articulo
+
+comment_tableheader_name = De
+comment_tableheader_comment = Comentario
+comment_tableheader_createdate = Creado en
+comment_tableheader_status = Estado
+
+comment_online = En línea
+comment_offline = Desconectado
+
+comment_label_comment = Comentario
+comment_label_email = E-Mail
+comment_label_name = Nombre
+comment_label_article = Artículo comentado
+comment_label_createdate = De
+
+comment_title = Comentario
+from = De
+
+comment_view_headline = Comentarios
+comment_view_from = Comentario por
+comment_view_at = Ver comentario en
+comment_view_around = Una
+comment_view_clock = Ver
+
+comment_new_headline = Gracias! ¡Su comentario ha sido guardado y será revisado por nosotros antes de su aprobación!
