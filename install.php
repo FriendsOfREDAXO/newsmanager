@@ -1,7 +1,7 @@
 <?php
 
 // load db settings from update.php
-$addon = rex_addon::get('feeds');
+$addon = rex_addon::get('newsmanager');
 $addon->includeFile(__DIR__ . '/update.php');
 
 if (rex_metainfo_add_field('Copyright', 'med_copyright', '','class="redactorEditor2-mediapool"','2','','','','') != "Der angegebene Spaltenname existiert schon!") {
