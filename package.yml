@@ -15,8 +15,8 @@ page:
         settings: { perm: 'newsmanagersettings[]', title: 'translate:settings', icon: rex-icon fa-wrench }
 
 requires:
-    redaxo: '>=5.4' # benötigt mindestens REDAXO 5.4
+    redaxo: '^5.4' # benötigt mindestens REDAXO 5.4
     packages:
         url: ^1.0.0-beta5 # benötig Addon Url
     php:
-        version: '>=5.6' # benötigt mindestens PHP 5.6
+        version: '^5.6' # benötigt mindestens PHP 5.6
