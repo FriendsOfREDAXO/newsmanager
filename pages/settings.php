@@ -81,7 +81,7 @@ $content .= '<p>' . $this->i18n('settings_description') . '</p>';
 $n = [];
 $n['label'] = '<label for="demo_addon-config-categories">' . $this->i18n('settings_category_label') . '</label>';
 
-$category_select = new rex_category_select(false, false, false, true);
+$category_select = new rex_category_select(false, false, false, false);
 $category_select->setName('config[newsmanager-page-id][]');
 $category_select->setAttribute('class', 'selectpicker');
 $category_select->setId('newsmanager-page-id');
