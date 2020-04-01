@@ -54,7 +54,7 @@ if ($news_id) {
 
     $article_post = $newsmanager->getArticleById($news_id);
 
-    echo $article_post->getTitleTag();
+    echo $article_post->getSEOTitleTag();
     echo $article_post->getDescriptionTag();
     echo $article_post->getCanonicalUrlTag($this->getValue('article_id'));
     echo $article_post->getHrefLangTag ($article_post->getId());
