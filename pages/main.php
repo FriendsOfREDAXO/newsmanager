@@ -175,14 +175,14 @@ if ($func == "") {
     $list->setColumnFormat('createdate', 'date', 'd.m.Y, G:i');
     $list->setColumnSortable('createdate');
     
-     $list->setColumnFormat('status', 'custom', function ($params) {
+    $list->setColumnFormat('status', 'custom', function ($params) {
             global $I18N;
-			$list = $params["list"];
+			$list = $params['list'];
 			if ($list->getValue("status") == 1)
 			$str = "<a class=\"no-wrap\" href=\"index.php?page=newsmanager/main&clang_id='.$clang_id.'&func=status&pid=###pid###\"><span class=\"rex-online\"><i class=\"rex-icon rex-icon-online\"></i> ".rex_i18n::msg("newsmanager_online")."</span></a>";
 			else
 			$str = "<a class=\"no-wrap\" href=\"index.php?page=newsmanager/main&clang_id='.$clang_id.'&func=status&pid=###pid###\"><span class=\"rex-offline\"><i class=\"rex-icon rex-icon-offline\"></i> ".rex_i18n::msg("newsmanager_offline")."</span></a>";
-			return $str;'
+			return $str;
         }
     );
 	
