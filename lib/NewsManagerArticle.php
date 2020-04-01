@@ -329,4 +329,16 @@ class NewsManagerArticle
 
         return $output;
     }
+	
+	public function printArticleTeaserList($post, $newsArticle)
+    {
+        $output = '';
+        $suggestions = array('article-teaser-list');
+        $output .= $this->tpl->render($suggestions, array(
+            'title' => $post->getTitle(),
+           'subtitle' => $this->getSubtitle(), 
+            'url' => $this->getUrl()
+                ));
+        return $output;
+    }
 }
