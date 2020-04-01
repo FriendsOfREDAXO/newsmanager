@@ -17,6 +17,7 @@ class NewsManagerArticle
     private $subtitle;
     private $richtext;
     private $images;
+	private $seo_title;
     private $seo_description;
     private $seo_canonical;
     private $clang_id;
@@ -72,6 +73,11 @@ class NewsManagerArticle
         return $this->images;
     }
 
+	public function getSeo_title()
+    {
+        return $this->seo_title;
+    }
+	
     public function getSeo_description()
     {
         return $this->seo_description;
@@ -160,6 +166,12 @@ class NewsManagerArticle
         $this->images = $images;
     }
 
+    public function setSeo_title($seo_title)
+    {
+        $this->seo_title = $seo_title;
+    }
+
+
     public function setSeo_description($seo_description)
     {
         $this->seo_description = $seo_description;
@@ -225,6 +237,13 @@ class NewsManagerArticle
 
         return '<title>' . htmlspecialchars($title) . '</title>'; //  lang="de"
     }
+
+
+    public function getSEOTitleTag()
+    {
+		return '<meta name="title" content="' . $this->getSeo_title() . '">';
+    }
+
 
     public function getDescriptionTag()
     {
@@ -308,6 +327,18 @@ class NewsManagerArticle
                 ));
 
 
+        return $output;
+    }
+	
+	public function printArticleTeaserList($post, $newsArticle)
+    {
+        $output = '';
+        $suggestions = array('article-teaser-list');
+        $output .= $this->tpl->render($suggestions, array(
+            'title' => $post->getTitle(),
+           'subtitle' => $this->getSubtitle(), 
+            'url' => $this->getUrl()
+                ));
         return $output;
     }
 }

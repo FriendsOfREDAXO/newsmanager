@@ -13,6 +13,7 @@ newsmanager_form_richtext = Artículo
 newsmanager_form_status = Estado
 newsmanager_form_createdate = Fecha
 newsmanager_form_language = Idioma
+newsmanager_form_seo_title = Meta Title
 newsmanager_form_seo_description = Metadescripción
 newsmanager_form_seo_canonical = Enlace canónico
 newsmanager_form_category_select = Categoría

@@ -73,6 +73,7 @@ if ($func == 'copy' && $pid > 0) {
                         . '`subtitle`, '
                         . '`richtext`, '
                         . '`images`, '
+						. '`seo_title`, '
                         . '`seo_description`, '
                         . '`seo_canonical`, '
                         . '`author`, '
@@ -88,6 +89,7 @@ if ($func == 'copy' && $pid > 0) {
                         . '`subtitle`, '
                         . '`richtext`, '
                         . '`images`, '
+						. '`seo_title`, '
                         . '`seo_description`, '
                         . '`seo_canonical`, '
                         . '`author`, '
@@ -270,6 +272,10 @@ if ($func == "") {
 
     $field = $form->addFieldset('SEO Einstellungen');
     
+	$field = $form->addTextField('seo_title');
+    $field->setLabel(rex_i18n::msg('newsmanager_form_seo_title'));
+    
+	
     $field = $form->addTextAreaField('seo_description');
     $field->setLabel(rex_i18n::msg('newsmanager_form_seo_description'));
     
