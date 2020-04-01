@@ -1,7 +1,7 @@
 # Alle hier gesetzten Werte können über $addon->getProperty($key) abgefragt werden
 
 package: newsmanager 
-version: '1.2.0'
+version: '1.2.1'
 author: Friends Of REDAXO 
 supportpage: https://github.com/FriendsOfREDAXO/newsmanager/
 
@@ -17,6 +17,6 @@ page:
 requires:
     redaxo: '^5.4' # benötigt mindestens REDAXO 5.4
     packages:
-        url: ^1.0.0-beta5 # benötig Addon Url
+        url: ^1.0.0 # benötig Addon Url
     php:
-        version: '^5.6' # benötigt mindestens PHP 5.6
+        version: '>=5.6' # benötigt mindestens PHP 5.6
