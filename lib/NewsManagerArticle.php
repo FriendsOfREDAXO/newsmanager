@@ -239,7 +239,7 @@ class NewsManagerArticle
     }
 
 
-    public function getTitleTag()
+    public function getSEOTitleTag()
     {
 		return '<meta name="title" content="' . $this->getSeo_title() . '">';
     }
