@@ -17,7 +17,7 @@ class NewsManagerArticle
     private $subtitle;
     private $richtext;
     private $images;
-	private $seo_title;
+    private $seo_title;
     private $seo_description;
     private $seo_canonical;
     private $clang_id;
@@ -151,7 +151,7 @@ class NewsManagerArticle
         $this->title = $title;
     }
 
-    public function setSubitle($subtitle)
+    public function setSubtitle($subtitle)
     {
         $this->subtitle = $subtitle;
     }
@@ -319,6 +319,7 @@ class NewsManagerArticle
 
         $output .= $this->tpl->render($suggestions, array(
             'title' => $post->getTitle(),
+            'subtitle' => $post->getSubTitle(),
             'createdate' => strftime('%A, %e. %B %Y', strtotime($post->getCreatedate())),
             'url' => $this->getUrl(),
             'teasertext' => $this->getTeaserText(),
