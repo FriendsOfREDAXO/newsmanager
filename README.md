@@ -45,6 +45,9 @@ $newsmanager = new NewsManager();
 
 // Mit aktiviertem Kommentarplugin:
 // $newsmanager = new NewsManagerWithComments();
+// Außerdem muß in diesem Fall auch noch das zugehörige JS geladen werden:
+// echo $newsmanager->getCommentJavaScript();
+
 
 $news_id = $newsmanager->getNewsIdParameter();
 
@@ -72,12 +75,6 @@ if ($news_id) {
     echo $seo->getCanonicalUrlTag();
 
 }
-```
-
-Nützt man das Comments-Plugin muss noch das nötige JavaScript hinzugefügt werden:
-
-```php
-echo $newsmanager->getCommentJavaScript();
 ```
 
 RSS Link (falls gewünscht):
