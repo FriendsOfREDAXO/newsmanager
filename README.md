@@ -91,8 +91,9 @@ if ($news_id) {
     // Artikel-Ansicht
     
     echo $newsmanager->printSingleView($article_post);
-    echo $newsmanager->getCommentList($article_post->getPid());
-    echo $newsmanager->getCommentForm($article_post->getPid());
+    // Mit aktiviertem Kommentarplugin:
+    // echo $newsmanager->getCommentList($article_post->getPid());
+    // echo $newsmanager->getCommentForm($article_post->getPid());
 
 } else {
 
