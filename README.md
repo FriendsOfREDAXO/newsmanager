@@ -46,7 +46,7 @@ $newsmanager = new NewsManager();
 // Mit aktiviertem Kommentarplugin:
 // $newsmanager = new NewsManagerWithComments();
 
-// Laden des JS falls mit Kommentarfuntion (and ende des HEAD)
+// Laden des JS falls mit Kommentarfuntion (and Ende des <head>)
 <?php
  if ((rex_plugin::get('newsmanager', 'comments')->isAvailable()) && (get_class($newsmanager) == 'NewsManagerWithComments')) {
    echo $newsmanager->getCommentJavaScript();             
