@@ -147,7 +147,7 @@ siehe [LICENSE](https://github.com/FriendsOfREDAXO/newsmanager/blob/master/LICEN
 
 **Friends Of REDAXO**
 
-* http://www.redaxo.org
+* https://www.redaxo.org
 * https://github.com/FriendsOfREDAXO
 
 **Projekt-Lead**
