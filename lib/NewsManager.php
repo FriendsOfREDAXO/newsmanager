@@ -397,7 +397,7 @@ $richtext = $newsArticle->getRichtext();
 
         $pagemenu .= '</ul>';
 
-        $this->tpl->render($suggestions, array(
+        $pagemenu = $this->tpl->render($suggestions, array(
             'pager' => $pagemenu
         ));
 
