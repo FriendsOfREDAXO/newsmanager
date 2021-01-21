@@ -65,7 +65,7 @@ Für die Ausgabe der jeweiligen Ansichten müssen Sie lediglich folgenden Codeab
             echo '  </div>'.PHP_EOL;
             echo '</header>'.PHP_EOL;
 
-            echo $newsmanager->printListView(null, $this->getValue('article_id'), 3);
+            echo $newsmanager->printListView($this->getValue('article_id'), 3);
 
         }
     ?>
