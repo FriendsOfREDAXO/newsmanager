@@ -156,7 +156,7 @@ if ($func == "") {
         echo '</div></div></div>'.PHP_EOL;
     }
 
-    $list = rex_list::factory('SELECT pid, id, id, title,createdate,status,clang_id FROM ' . rex::getTablePrefix() . 'newsmanager WHERE clang_id = '.$clang_id.' ORDER BY createdate DESC', 25);
+    $list = rex_list::factory('SELECT pid, id, title,createdate,status,clang_id FROM ' . rex::getTablePrefix() . 'newsmanager WHERE clang_id = '.$clang_id.' ORDER BY createdate DESC', 25);
     $list->addTableAttribute('class', 'table-striped');
     $tdIcon = '<i class="rex-icon rex-icon-article"></i>';
     $thIcon = '<a href="' . $list->getUrl(['clang_id' => $clang_id, 'func' => 'add']) . '"><i class="rex-icon rex-icon-add"></i></a>';
