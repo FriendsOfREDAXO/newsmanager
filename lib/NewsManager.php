@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Newsmanager Class
+ * Newsmanager Class für URL Addon V. 2
  *
  * @author Georg Kaser
  *
@@ -19,16 +19,20 @@ class NewsManager
         $this->category_id_parameter = rex_get('category', 'int');
         $this->tpl = new Template(rex_path::addonData('newsmanager') . 'views/');
 
-        $urlData = UrlGenerator::getData();
+       $manager = Url\Url::resolveCurrent();
 
-        if (($urlData) && ($urlData->urlParamKey == 'newsmanager')) {
-            $this->news_id_parameter = UrlGenerator::getId();
+	if($manager) {
+        	if (($manager) && (  $manager->getProfile()->getNamespace() == 'newsmanager')) { // cb
+				$this->news_id_parameter = $manager->getDatasetId(); // cb
         }
 
-        if (($urlData) && ($urlData->urlParamKey == 'newsmanager_category')) {
-            $this->category_id_parameter = UrlGenerator::getId();
+        if (($manager) && (  $manager->getProfile()->getNamespace()== 'newsmanager_category')) { // cb
+		$this->category_id_parameter = $manager->getDatasetId(); // cb
         }
-    }
+    	}
+
+	}
+
     
     public static function create() {
         
