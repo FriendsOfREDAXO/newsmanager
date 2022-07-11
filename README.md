@@ -26,7 +26,7 @@ Einfach das AddOn nach `/redaxo/src/addons/` kopieren und im AddOns-Bereich inst
 
 **Das AddOn benötigt folgende AddOns:**
 
-* [url Addon v2](https://github.com/tbaddade/redaxo_url) (für "sprechende" URLs)
+* [redaxo_url V.2](https://github.com/tbaddade/redaxo_url) (für "sprechende" URLs)
 * [redactor2](https://github.com/FriendsOfREDAXO/redactor2) (optional, macht aber Sinn wenn man Richtext im Artikel verwenden will).
 
 Das AddOn enthält eine Einstellungsseite. Hier sollten Sie die Kategorie auswählen, in welcher im Startartikel die Artikelliste und die Artikelansicht ausgegben wird. Beim Klick auf "Einstellungen speichern" wird (falls vorhanden) ein Profil für das redactor2-AddOn sowie die Einstellungen für das url-AddOn angelegt.
