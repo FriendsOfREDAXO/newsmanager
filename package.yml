@@ -17,6 +17,6 @@ page:
 requires:
     redaxo: '^5.4' # benötigt mindestens REDAXO 5.4
     packages:
-        url: ^1.0.0 # benötig Addon Url
+        url: '>1.0.0' # benötig Addon Url 2
     php:
         version: '>=5.6' # benötigt mindestens PHP 5.6
