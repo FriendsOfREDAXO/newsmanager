@@ -1,4 +1,4 @@
-<article id="" class="news-entry news-list-entry grid">
+<article class="news-entry news-list-entry grid">
     <?php if ($image != "") : ?>
     <div class="col-12">
         <h2><a href="<?=$url?>"><?=$title?></a></h2>
