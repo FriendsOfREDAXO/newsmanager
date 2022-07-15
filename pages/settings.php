@@ -50,7 +50,8 @@ if (rex_post('formsubmit', 'string') == '1') {
                 $result = rex_sql::factory()->setQuery($query);
             }
 
-            UrlGenerator::generatePathFile([]);
+           
+            Url\Url::resolveCurrent();
 
         }
     }

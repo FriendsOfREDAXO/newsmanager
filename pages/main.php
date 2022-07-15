@@ -110,7 +110,7 @@ if ($func == 'copy' && $pid > 0) {
         }
     }
 
-    UrlGenerator::generatePathFile([]);
+   Url\Url::resolveCurrent();
     
     $func = '';
 }
@@ -125,7 +125,7 @@ if ($func == 'status' && $pid > 0) {
         $error = $sql->getError();
     }
 
-    UrlGenerator::generatePathFile([]);
+    Url\Url::resolveCurrent();
     
     $func = '';
 }
@@ -307,7 +307,7 @@ END;
     
     $content .= $jScript;
     
-    UrlGenerator::generatePathFile([]);
+    Url\Url::resolveCurrent();
     
 }
 

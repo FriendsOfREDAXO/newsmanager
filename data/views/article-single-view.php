@@ -4,7 +4,7 @@
     </div>
 </header>
 
-<article id="" class="news-entry col-md-12 white">
+<article class="news-entry col-md-12 white">
         <div class="col-md-6"><?=$image?></div>
              <h2><?=$subtitle?></h2>
     <?=$richtext?>
