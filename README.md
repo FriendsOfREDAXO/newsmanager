@@ -152,5 +152,4 @@ siehe [LICENSE](https://github.com/FriendsOfREDAXO/newsmanager/blob/master/LICEN
 
 **Projekt-Lead**
 
-[Georg Kaser](https://github.com/georgkaser)
 [Tizian Bauer](https://github.com/ansichtsache)
