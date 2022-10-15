@@ -30,13 +30,10 @@ $content = "";
 $pid = rex_request('pid', 'int');
 $id = rex_request('id', 'int');
 $func = rex_request('func', 'string');
-$clang_id = rex_request('clang_id', 'int');
+$clang_id = rex_request('clang_id', 'int', rex_clang::getStartId());
 
 $fragment = new rex_fragment();
 
-if ($clang_id == "") {
-    $clang_id = 1;
-}
 $success = "";
 $error = "";
 
@@ -177,13 +174,13 @@ if ($func == "") {
     $list->setColumnFormat('createdate', 'date', 'd.m.Y, G:i');
     $list->setColumnSortable('createdate');
     
-    $list->setColumnFormat('status', 'custom', function ($params) {
+    $list->setColumnFormat('status', 'custom', function ($params) use ($clang_id) {
             global $I18N;
 			$list = $params['list'];
 			if ($list->getValue("status") == 1)
-			$str = "<a class=\"no-wrap\" href=\"index.php?page=newsmanager/main&clang_id='.$clang_id.'&func=status&pid=###pid###\"><span class=\"rex-online\"><i class=\"rex-icon rex-icon-online\"></i> ".rex_i18n::msg("newsmanager_online")."</span></a>";
+			$str = "<a class=\"no-wrap\" href=\"index.php?page=newsmanager/main&clang_id=".$clang_id."&func=status&pid=###pid###\"><span class=\"rex-online\"><i class=\"rex-icon rex-icon-online\"></i> ".rex_i18n::msg("newsmanager_online")."</span></a>";
 			else
-			$str = "<a class=\"no-wrap\" href=\"index.php?page=newsmanager/main&clang_id='.$clang_id.'&func=status&pid=###pid###\"><span class=\"rex-offline\"><i class=\"rex-icon rex-icon-offline\"></i> ".rex_i18n::msg("newsmanager_offline")."</span></a>";
+			$str = "<a class=\"no-wrap\" href=\"index.php?page=newsmanager/main&clang_id=".$clang_id."&func=status&pid=###pid###\"><span class=\"rex-offline\"><i class=\"rex-icon rex-icon-offline\"></i> ".rex_i18n::msg("newsmanager_offline")."</span></a>";
 			return $str;
         }
     );
