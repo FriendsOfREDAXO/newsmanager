@@ -1,14 +1,7 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 class NewsManagerArticle
 {
-
     private $id;
     private $pid;
     private $status;
@@ -34,10 +27,12 @@ class NewsManagerArticle
     {
         $this->tpl = new Template(rex_path::addonData('newsmanager') . 'views/');
     }
+
     public function getPid()
     {
         return $this->pid;
     }
+
     public function getId()
     {
         return $this->id;
@@ -57,8 +52,8 @@ class NewsManagerArticle
     {
         return $this->title;
     }
-    
-        public function getSubtitle()
+
+    public function getSubtitle()
     {
         return $this->subtitle;
     }
@@ -73,11 +68,11 @@ class NewsManagerArticle
         return $this->images;
     }
 
-	public function getSeo_title()
+    public function getSeo_title()
     {
         return $this->seo_title;
     }
-	
+
     public function getSeo_description()
     {
         return $this->seo_description;
@@ -127,10 +122,12 @@ class NewsManagerArticle
     {
         return $this->url;
     }
+
     public function setPid($pid)
     {
         $this->pid = $pid;
     }
+
     public function setId($id)
     {
         $this->id = $id;
@@ -155,7 +152,7 @@ class NewsManagerArticle
     {
         $this->subtitle = $subtitle;
     }
-    
+
     public function setRichtext($richtext)
     {
         $this->richtext = $richtext;
@@ -214,10 +211,11 @@ class NewsManagerArticle
 
     public function setTeaserText($richtext)
     {
-        if (($richtext) && (strpos($richtext, '<hr>'))) { 
+        if (($richtext) && (strpos($richtext, '<hr>'))) {
             $this->teasertext = str_replace('<hr>', '', substr($richtext, 0, strpos($richtext, '<hr>')));
-        } else {     
-            $this->teasertext = '<p>' . preg_replace("/[^ ]*$/", '', mb_substr(strip_tags($richtext), 0, 300)).'...</p>';
+        }
+        else {
+            $this->teasertext = '<p>' . preg_replace("/[^ ]*$/", '', mb_substr(strip_tags($richtext), 0, 300)) . '...</p>';
         }
     }
 
@@ -228,7 +226,6 @@ class NewsManagerArticle
 
     public function getTitleTag($article_id)
     {
-
         $title_scheme = rex_yrewrite::getDomainByArticleId($article_id)->getTitle();
 
         $title = $title_scheme;
@@ -238,10 +235,9 @@ class NewsManagerArticle
         return '<title>' . htmlspecialchars($title) . '</title>'; //  lang="de"
     }
 
-
     public function getSEOTitleTag()
     {
-		return '<meta name="title" content="' . $this->getSeo_title() . '">';
+        return '<meta name="title" content="' . $this->getSeo_title() . '">';
     }
 
 
@@ -254,7 +250,8 @@ class NewsManagerArticle
     {
         if ($this->getSeo_canonical() != "") {
             return '<link rel="canonical" href="' . htmlspecialchars($this->getSeo_canonical()) . '" />';
-        } else {
+        }
+        else {
             return '<link rel="canonical" href="' . substr(rex::getServer(), 0, -1) . $this->getUrl() . '" />';
         }
     }
@@ -263,9 +260,9 @@ class NewsManagerArticle
     {
         $output = '';
         $query = 'SELECT * '
-                . 'FROM `' . rex::getTablePrefix() . 'newsmanager` '
-                . 'WHERE `status` = 1 '
-                . 'AND id = ' . $article_id;
+            . 'FROM `' . rex::getTablePrefix() . 'newsmanager` '
+            . 'WHERE `status` = 1 '
+            . 'AND id = ' . $article_id;
 
         $result = rex_sql::factory()->getArray($query);
 
@@ -280,7 +277,6 @@ class NewsManagerArticle
 
     public function makeImage($media_name, $mediamanager_type = 'newsmanager')
     {
-
         $image_output = "";
 
         $media = rex_media::get($media_name);
@@ -304,8 +300,6 @@ class NewsManagerArticle
     public function printArticleTeaser($post, $singleViewArticleId)
     {
         $output = '';
-
-
         $image = '';
 
         $suggestions = array('article-teaser');
@@ -325,21 +319,20 @@ class NewsManagerArticle
             'teasertext' => $this->getTeaserText(),
             'image' => $image,
             'author' => $this->getAuthor()
-                ));
-
+        ));
 
         return $output;
     }
-	
-	public function printArticleTeaserList($post, $newsArticle)
+
+    public function printArticleTeaserList($post, $newsArticle)
     {
         $output = '';
         $suggestions = array('article-teaser-list');
         $output .= $this->tpl->render($suggestions, array(
             'title' => $post->getTitle(),
-           'subtitle' => $this->getSubtitle(), 
+            'subtitle' => $this->getSubtitle(),
             'url' => $this->getUrl()
-                ));
+        ));
         return $output;
     }
 }

@@ -8,7 +8,6 @@
  */
 class NewsManager
 {
-
     protected $tpl;
     public $news_id_parameter;
     public $category_id_parameter;
@@ -19,29 +18,28 @@ class NewsManager
         $this->category_id_parameter = rex_get('category', 'int');
         $this->tpl = new Template(rex_path::addonData('newsmanager') . 'views/');
 
-       $manager = Url\Url::resolveCurrent();
+        $manager = Url\Url::resolveCurrent();
 
-	if($manager) {
-        	if (($manager) && (  $manager->getProfile()->getNamespace() == 'newsmanager')) { // cb
-				$this->news_id_parameter = $manager->getDatasetId(); // cb
+        if ($manager) {
+            if (($manager) && ($manager->getProfile()->getNamespace() == 'newsmanager')) { // cb
+                $this->news_id_parameter = $manager->getDatasetId(); // cb
+            }
+
+            if (($manager) && ($manager->getProfile()->getNamespace() == 'newsmanager_category')) { // cb
+                $this->category_id_parameter = $manager->getDatasetId(); // cb
+            }
         }
+    }
 
-        if (($manager) && (  $manager->getProfile()->getNamespace()== 'newsmanager_category')) { // cb
-		$this->category_id_parameter = $manager->getDatasetId(); // cb
-        }
-    	}
-
-	}
-
-    
-    public static function create() {
-        
+    public static function create()
+    {
         if (rex_addon::get('newsmanager')->getPlugin('comments')->isAvailable()) {
             $instance = new NewsManagerWithComments();
-        } else {
+        }
+        else {
             $instance = new self();
         }
-        
+
         return $instance;
     }
 
@@ -69,6 +67,7 @@ class NewsManager
      * Returns the result as an rex_sql object
      * @param string $query SQL query string
      * @return rex_sql rex_sql object
+     * @throws rex_sql_exception
      */
     private function getBySql($query)
     {
@@ -81,6 +80,7 @@ class NewsManager
      *
      * @param string $query SQL query string
      * @return array rex_sql result as array
+     * @throws rex_sql_exception
      */
     public function getArrayBySql($query)
     {
@@ -93,21 +93,21 @@ class NewsManager
      * @param rex_sql $result database result
      * @param string $lang_id language id
      * @return \NewsManagerArticle
+     * @throws rex_sql_exception
      */
     private function initializeArticleObject($result, $lang_id)
     {
-
         $newsArticle = new NewsManagerArticle();
-        
+
         $newsArticle->setPid($result->getValue('pid'));
         $newsArticle->setId($result->getValue('id'));
         $newsArticle->setStatus($result->getValue('status'));
         $newsArticle->setNewsmanager_category_id($result->getValue('newsmanager_category_id'));
         $newsArticle->setTitle($result->getValue('title'));
-        $newsArticle->setSubtitle($result->getValue('subtitle'));    
+        $newsArticle->setSubtitle($result->getValue('subtitle'));
         $newsArticle->setRichtext($result->getValue('richtext'));
         $newsArticle->setImages($result->getValue('images'));
-	$newsArticle->setSeo_title($result->getValue('seo_title'));
+        $newsArticle->setSeo_title($result->getValue('seo_title'));
         $newsArticle->setSeo_description($result->getValue('seo_description'));
         $newsArticle->setSeo_canonical($result->getValue('seo_canonical'));
         $newsArticle->setAuthor($result->getValue('author'));
@@ -125,17 +125,18 @@ class NewsManager
      *
      * @param string $limit until paging
      * @return array array with article objects
+     * @throws rex_sql_exception
      */
     public function getArticleObjectList($limit)
     {
-
         $limit = $limit;
 
         $page = rex_request('offset', 'int');
 
         if ($page == "") {
             $start = 0;
-        } else {
+        }
+        else {
             $start = $page;
         }
 
@@ -150,12 +151,12 @@ class NewsManager
         $allNewsArticleObjects = [];
 
         $query = 'SELECT SQL_CALC_FOUND_ROWS * '
-                . 'FROM `' . rex::getTablePrefix() . 'newsmanager` '
-                . 'WHERE `status` = 1 '
-                . $AND_clause
-                . 'AND clang_id = ' . rex_clang::getCurrentId() . ' '
-                . 'ORDER BY `createdate` DESC '
-                . 'LIMIT ' . $start . ', ' . $limit . '';
+            . 'FROM `' . rex::getTablePrefix() . 'newsmanager` '
+            . 'WHERE `status` = 1 '
+            . $AND_clause
+            . 'AND clang_id = ' . rex_clang::getCurrentId() . ' '
+            . 'ORDER BY `createdate` DESC '
+            . 'LIMIT ' . $start . ', ' . $limit . '';
 
         $result = $this->getBySql($query);
 
@@ -190,6 +191,7 @@ class NewsManager
      *
      * @param string $newsArticle_id id of the newsarticle
      * @return NewsManagerArticle returns the newsartile object
+     * @throws rex_sql_exception
      */
     public function getArticleById($newsArticle_id)
     {
@@ -197,10 +199,10 @@ class NewsManager
         $newsArticle = new NewsManagerArticle();
 
         $query = 'SELECT * '
-                . 'FROM `' . rex::getTablePrefix() . 'newsmanager` '
-                . 'WHERE `status` = 1 '
-                . 'AND id = ' . $newsArticle_id . ' '
-                . 'AND clang_id = ' . rex_clang::getCurrentId();
+            . 'FROM `' . rex::getTablePrefix() . 'newsmanager` '
+            . 'WHERE `status` = 1 '
+            . 'AND id = ' . $newsArticle_id . ' '
+            . 'AND clang_id = ' . rex_clang::getCurrentId();
 
         $result = $this->getBySql($query);
 
@@ -212,14 +214,14 @@ class NewsManager
 
         return $newsArticle;
     }
-    
 
-    
+
     /**
      * Generates a list view of the articles from a template (article-teaser-list-view.php)
      *
      * @param NewsManagerArticle $newsArticle Article object
      * @return string markup of the article teaser list view
+     * @throws rex_sql_exception
      */
     public function printTeaserListView($singleViewArticleId, $limit = 0)
     {
@@ -237,20 +239,19 @@ class NewsManager
         }
 
         $TeaserlistView_output .= $this->tpl->render($suggestions, array(
-                     'teasernewslist' => $teasernewslist
-            ));
+            'teasernewslist' => $teasernewslist
+        ));
 
-        return '<ul>'.$TeaserlistView_output.'</ul>';
+        return '<ul>' . $TeaserlistView_output . '</ul>';
     }
-    
-           
-    
-    
+
+
     /**
      * Generates the list view of the articles from a template (article-list-view.php)
      *
      * @param NewsManagerArticle $newsArticle Article object
      * @return string markup of the article list view
+     * @throws rex_sql_exception
      */
     public function printListView($singleViewArticleId, $limit = 0)
     {
@@ -275,6 +276,7 @@ class NewsManager
 
         return $listView_output;
     }
+
     /**
      * Generates the single view of the article from a template (article-single-view.php)
      *
@@ -295,7 +297,8 @@ class NewsManager
 
                 if (count($images) == 1) {
                     $image = $newsArticle->makeImage($images[0]);
-                } else {
+                }
+                else {
                     $image = '<div id="images">' . PHP_EOL;
                     foreach ($images as $key => $value) {
 //                        $image .= '<div id="image-' . $key . '" class="image">' . PHP_EOL;
@@ -308,13 +311,14 @@ class NewsManager
             if (strpos($newsArticle->getRichtext(), '<hr>')) {
 //              $richtext_with_image = str_replace('<hr>', $image, $newsArticle->getRichtext());
                 $richtext = str_replace('<hr>', $image, $newsArticle->getRichtext());
-            } else {
-//              $richtext_with_image = $newsArticle->getRichtext() . $image; // Ausgabe von Text und Bild unabhängig
-                $richtext = $newsArticle->getRichtext();   
             }
-            
-$richtext = $newsArticle->getRichtext();
-            
+            else {
+//              $richtext_with_image = $newsArticle->getRichtext() . $image; // Ausgabe von Text und Bild unabhängig
+                $richtext = $newsArticle->getRichtext();
+            }
+
+            $richtext = $newsArticle->getRichtext();
+
             $output .= $this->tpl->render($suggestions, array(
                 'title' => $newsArticle->getTitle(),
                 'subtitle' => $newsArticle->getSubtitle(),
@@ -323,7 +327,8 @@ $richtext = $newsArticle->getRichtext();
                 'image' => $image,
                 'author' => $newsArticle->getAuthor()
             ));
-        } else {
+        }
+        else {
             $suggestions = array('article-error-view');
 
             $output .= $this->tpl->render($suggestions, array(
@@ -338,6 +343,7 @@ $richtext = $newsArticle->getRichtext();
      * Generates the Category Menu
      *
      * @return string category menu markup
+     * @throws rex_sql_exception
      */
     public function printCategoryMenu()
     {
@@ -346,8 +352,8 @@ $richtext = $newsArticle->getRichtext();
         $category_menu .= '<nav id="categories">' . PHP_EOL;
         $category_menu .= ' <ul>' . PHP_EOL;
         $query = 'SELECT *'
-                . 'FROM `' . rex::getTablePrefix() . 'newsmanager_categories` '
-                . 'WHERE `clang_id` = ' . rex_clang::getCurrentId();
+            . 'FROM `' . rex::getTablePrefix() . 'newsmanager_categories` '
+            . 'WHERE `clang_id` = ' . rex_clang::getCurrentId();
 
         $result = rex_sql::factory()->setQuery($query);
 
@@ -393,9 +399,10 @@ $richtext = $newsArticle->getRichtext();
             $class = ($pager->isActivePage($page)) ? ' active' : '';
             if ($this->category_id_parameter) {
                 $pagemenu .= '<li>
-                    <a class="'. $class .'" href="' . rex_getUrl(rex_article::getCurrentId(), '', [$pager->getCursorName() => $pager->getCursor($page), 'category' => $this->category_id_parameter]) . '">' . ($page + 1) . '</a></li>';
-            } else {
-                $pagemenu .= '<li><a class="'. $class .'" href="' . rex_getUrl(rex_article::getCurrentId(), '', [$pager->getCursorName() => $pager->getCursor($page)]) . '">' . ($page + 1) . '</a></li>';
+                    <a class="' . $class . '" href="' . rex_getUrl(rex_article::getCurrentId(), '', [$pager->getCursorName() => $pager->getCursor($page), 'category' => $this->category_id_parameter]) . '">' . ($page + 1) . '</a></li>';
+            }
+            else {
+                $pagemenu .= '<li><a class="' . $class . '" href="' . rex_getUrl(rex_article::getCurrentId(), '', [$pager->getCursorName() => $pager->getCursor($page)]) . '">' . ($page + 1) . '</a></li>';
             }
         }
 
@@ -407,12 +414,14 @@ $richtext = $newsArticle->getRichtext();
 
         return $pagemenu;
     }
-    
-    public static function getRssHeaderLink() {
-        
+
+    public static function getRssHeaderLink()
+    {
+
         return '<link rel="alternate" type="application/rss+xml" title="' . rex::getServerName() . ' RSS-Feed" href="' . rex::getServer() . 'rss-feed-' . rex_clang::getCurrent()->getCode() . '.xml" />';
-        
+
     }
+
     /**
      * Generates a RSS Feed file for all available online languages
      */
@@ -427,10 +436,13 @@ $richtext = $newsArticle->getRichtext();
             }
         }
     }
+
     /**
      * Builds the RSS feed and save it to the root directory of the project
      *
      * @param rex_clang $lang
+     * @throws DOMException
+     * @throws rex_sql_exception
      */
     private function generateRssFeed($lang)
     {
@@ -457,7 +469,7 @@ $richtext = $newsArticle->getRichtext();
 
         $head_link = $xml->createElement('link', rex::getServer());
         $channel->appendChild($head_link);
-        
+
         $articles = $this->getRSSArticleObjects($lang, 20);
 
         foreach ($articles as $article) {
@@ -486,22 +498,24 @@ $richtext = $newsArticle->getRichtext();
 
         $xml->save('../rss-feed-' . $lang->getCode() . '.xml');
     }
+
     /**
      *
      * @param clang $lang language object
      * @param int $limit limit of the output
      * @return array article objects as array
+     * @throws rex_sql_exception
      */
     private function getRSSArticleObjects($lang, $limit)
     {
         $articleObjects = [];
 
         $query = 'SELECT * '
-                . 'FROM `' . rex::getTablePrefix() . 'newsmanager` '
-                . 'WHERE `status` = 1 '
-                . 'AND clang_id = ' . $lang->getId() . ' '
-                . 'ORDER BY `createdate` DESC '
-                . 'LIMIT 0, ' . $limit;
+            . 'FROM `' . rex::getTablePrefix() . 'newsmanager` '
+            . 'WHERE `status` = 1 '
+            . 'AND clang_id = ' . $lang->getId() . ' '
+            . 'ORDER BY `createdate` DESC '
+            . 'LIMIT 0, ' . $limit;
 
         $result = $this->getBySql($query);
 
