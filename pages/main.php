@@ -91,7 +91,7 @@ if ($func == 'copy' && $pid > 0) {
                         . '`seo_canonical`, '
                         . '`author`, '
                         . '"'.rex::getUser()->getlogin().'", '
-                        . 'createdate, '
+                        . '"'.rex_sql::datetime().'", '
                         . '"'.rex::getUser()->getlogin().'", '
                         . 'updatedate, '
                         . $lang->getId().' '
