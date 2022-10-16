@@ -1,3 +1,3 @@
 <div class="col-8">
-    <?=$pager?>
+    <?= $this->pager ?>
 </div>

@@ -302,8 +302,6 @@ class NewsManagerArticle
         $output = '';
         $image = '';
 
-        $suggestions = array('article-teaser');
-
         if ($post->getImages() != "") {
             $images = explode(',', $post->getImages());
             $image = $this->makeImage($images[0]);
@@ -311,28 +309,34 @@ class NewsManagerArticle
 
         $this->setTeaserText($post->getRichtext());
 
-        $output .= $this->tpl->render($suggestions, array(
-            'title' => $post->getTitle(),
-            'subtitle' => $post->getSubTitle(),
-            'createdate' => strftime('%A, %e. %B %Y', strtotime($post->getCreatedate())),
-            'url' => $this->getUrl(),
-            'teasertext' => $this->getTeaserText(),
-            'image' => $image,
-            'author' => $this->getAuthor()
-        ));
+        $fragment = new rex_fragment();
+        $fragment->setVar('title', $post->getTitle());
+        $fragment->setVar('subtitle', $post->getSubTitle());
+        $fragment->setVar('createdate', strftime('%A, %e. %B %Y', strtotime($post->getCreatedate())));
+        $fragment->setVar('url', $this->getUrl());
+        $fragment->setVar('teasertext', $this->getTeaserText(), false);
+        $fragment->setVar('image', $image, false);
+        $fragment->setVar('author', $this->getAuthor());
+
+        $output .= $fragment->parse('article-teaser.php');
 
         return $output;
     }
 
+    /**
+     * @throws rex_exception
+     */
     public function printArticleTeaserList($post, $newsArticle)
     {
         $output = '';
-        $suggestions = array('article-teaser-list');
-        $output .= $this->tpl->render($suggestions, array(
-            'title' => $post->getTitle(),
-            'subtitle' => $this->getSubtitle(),
-            'url' => $this->getUrl()
-        ));
+
+        $fragment = new rex_fragment();
+        $fragment->setVar('title', $post->getTitle());
+        $fragment->setVar('subtitle', $this->getSubtitle());
+        $fragment->setVar('url', $this->getUrl());
+
+        $output .= $fragment->parse('article-teaser-list.php');
+
         return $output;
     }
 }

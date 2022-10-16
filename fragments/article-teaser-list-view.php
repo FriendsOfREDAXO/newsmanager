@@ -1,0 +1,1 @@
+<ul><?= $this->teasernewslist ?></ul>

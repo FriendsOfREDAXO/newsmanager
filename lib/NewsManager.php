@@ -129,8 +129,6 @@ class NewsManager
      */
     public function getArticleObjectList($limit)
     {
-        $limit = $limit;
-
         $page = rex_request('offset', 'int');
 
         if ($page == "") {
@@ -146,7 +144,7 @@ class NewsManager
 
         if ($category_id != 0) {
             $AND_clause .= 'AND `newsmanager_category_id` LIKE \'%|' . $category_id . '|%\' ';
-        };
+        }
 
         $allNewsArticleObjects = [];
 
@@ -168,11 +166,16 @@ class NewsManager
             $result->next();
         }
 
-        $query = 'SELECT FOUND_ROWS()';
+        $query = 'SELECT SQL_CALC_FOUND_ROWS * '
+            . 'FROM `' . rex::getTablePrefix() . 'newsmanager` '
+            . 'WHERE `status` = 1 '
+            . $AND_clause
+            . 'AND clang_id = ' . rex_clang::getCurrentId() . ' '
+            . 'ORDER BY `createdate` DESC ';
 
-        $result = $this->getArrayBySql($query);
+        $result = $this->getBySql($query);
 
-        $allNewsArticleObjects['total'] = $result[0]['FOUND_ROWS()'];
+        $allNewsArticleObjects['total'] = $result->getRows();
 
         $listView_output = '';
 
@@ -219,8 +222,10 @@ class NewsManager
     /**
      * Generates a list view of the articles from a template (article-teaser-list-view.php)
      *
-     * @param NewsManagerArticle $newsArticle Article object
+     * @param $singleViewArticleId
+     * @param int $limit
      * @return string markup of the article teaser list view
+     * @throws rex_exception
      * @throws rex_sql_exception
      */
     public function printTeaserListView($singleViewArticleId, $limit = 0)
@@ -228,21 +233,18 @@ class NewsManager
         $TeaserlistView_output = '';
         $teasernewslist = '';
 
-        $suggestions = array('article-teaser-list-view');
-
         $posts = $this->getArticleObjectList($limit);
 
         foreach ($posts as $post) {
             if ($post instanceof NewsManagerArticle) {
-                $teasernewslist .= $post->printArticleTeaserList($post, $newsArticle);
+                $teasernewslist .= $post->printArticleTeaserList($post, null);
             }
         }
 
-        $TeaserlistView_output .= $this->tpl->render($suggestions, array(
-            'teasernewslist' => $teasernewslist
-        ));
+        $fragment = new rex_fragment();
+        $fragment->setVar('teasernewslist', $teasernewslist, false);
 
-        return '<ul>' . $TeaserlistView_output . '</ul>';
+        return $fragment->parse('article-teaser-list-view.php');
     }
 
 
@@ -255,12 +257,7 @@ class NewsManager
      */
     public function printListView($singleViewArticleId, $limit = 0)
     {
-        $listView_output = '';
         $newslist = '';
-
-
-        $suggestions = array('article-list-view');
-
         $posts = $this->getArticleObjectList($limit);
 
         foreach ($posts as $post) {
@@ -269,12 +266,11 @@ class NewsManager
             }
         }
 
-        $listView_output .= $this->tpl->render($suggestions, array(
-            'newslist' => $newslist,
-            'pager' => $posts['pager']
-        ));
+        $fragment = new rex_fragment();
+        $fragment->setVar('newslist', $newslist, false);
+        $fragment->setVar('pager', $posts['pager'], false);
 
-        return $listView_output;
+        return $fragment->parse('article-list-view.php');
     }
 
     /**
@@ -285,13 +281,10 @@ class NewsManager
      */
     public function printSingleView($newsArticle)
     {
-
         $output = '';
         $image = '';
 
         if ($newsArticle->getId() != null) {
-            $suggestions = array('article-single-view');
-
             if ($newsArticle->getImages() != "") {
                 $images = explode(',', $newsArticle->getImages());
 
@@ -319,23 +312,24 @@ class NewsManager
 
             $richtext = $newsArticle->getRichtext();
 
-            $output .= $this->tpl->render($suggestions, array(
-                'title' => $newsArticle->getTitle(),
-                'subtitle' => $newsArticle->getSubtitle(),
-                'createdate' => strftime('%A, %e. %B %Y', strtotime($newsArticle->getCreatedate())),
-                'richtext' => $richtext,
-                'image' => $image,
-                'author' => $newsArticle->getAuthor()
-            ));
+            $fragment = new rex_fragment();
+            $fragment->setVar('title', $newsArticle->getTitle());
+            $fragment->setVar('subtitle', $newsArticle->getSubtitle());
+            $fragment->setVar('createdate', strftime('%A, %e. %B %Y', strtotime($newsArticle->getCreatedate())));
+            $fragment->setVar('richtext', $richtext, false);
+            $fragment->setVar('image', $image, false);
+            $fragment->setVar('author', $newsArticle->getAuthor());
+
+            $output .= $fragment->parse('article-single-view.php');
         }
         else {
-            $suggestions = array('article-error-view');
+            $fragment = new rex_fragment();
+            $fragment->setVar('title', rex_i18n::rawMsg('newsmanager_error_headline'));
+            $fragment->setVar('error', rex_i18n::rawMsg('newsmanager_error_no_post'));
 
-            $output .= $this->tpl->render($suggestions, array(
-                'title' => rex_i18n::rawMsg('newsmanager_error_headline'),
-                'error' => rex_i18n::rawMsg('newsmanager_error_no_post')
-            ));
+            $output .= $fragment->parse('article-error-view.php');
         }
+
         return $output;
     }
 
@@ -386,11 +380,7 @@ class NewsManager
      */
     private function getPager($total, $limit)
     {
-
         $pagemenu = 'pager';
-
-        $suggestions = array('article-pager');
-
         $pager = new rex_pager($limit, 'offset');
         $pager->setRowCount($total);
 
@@ -408,11 +398,10 @@ class NewsManager
 
         $pagemenu .= '</ul>';
 
-        $pagemenu = $this->tpl->render($suggestions, array(
-            'pager' => $pagemenu
-        ));
+        $fragment = new rex_fragment();
+        $fragment->setVar('pager', $pagemenu, false);
 
-        return $pagemenu;
+        return $fragment->parse('article-pager.php');
     }
 
     public static function getRssHeaderLink()
