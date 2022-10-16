@@ -23,3 +23,8 @@ requires:
 conflicts:
     packages:
         url: '<=2.0.0'
+installer_ignore:
+  - .git
+  - .github
+  - .gitattributes
+  - .gitignore
