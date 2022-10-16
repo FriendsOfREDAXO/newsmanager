@@ -275,6 +275,40 @@ class NewsManagerArticle
         return $output;
     }
 
+    public function getPrevUrl()
+    {
+        $sql = rex_sql::factory();
+        $sql->setQuery('SELECT id FROM ' . rex::getTable('newsmanager') . ' 
+                WHERE status=1 AND clang_id='.rex_clang::getCurrentId().' AND createdate < "'.$this->getCreatedate().'"
+                LIMIT 1');
+
+        if ($sql->getRows() <= 0) {
+            return null;
+        }
+
+        $manager = new NewsManager();
+        $article = $manager->getArticleById($sql->getValue('id'));
+
+        return $article->getUrl();
+    }
+
+    public function getNextUrl()
+    {
+        $sql = rex_sql::factory();
+        $sql->setQuery('SELECT id FROM ' . rex::getTable('newsmanager') . ' 
+                WHERE status=1 AND clang_id='.rex_clang::getCurrentId().' AND createdate > "'.$this->getCreatedate().'"
+                LIMIT 1');
+
+        if ($sql->getRows() <= 0) {
+            return null;
+        }
+
+        $manager = new NewsManager();
+        $article = $manager->getArticleById($sql->getValue('id'));
+
+        return $article->getUrl();
+    }
+
     public function makeImage($media_name, $mediamanager_type = 'newsmanager')
     {
         $image_output = "";
