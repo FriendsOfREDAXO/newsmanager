@@ -109,6 +109,7 @@ if (rex_post('formsubmit', 'string') == '1') {
                 $newsManagerSqlCategories->insert();
             }
 
+            Url\Cache::generateProfiles();
             Url\Url::resolveCurrent();
         }
     }
