@@ -3,16 +3,18 @@
     margin-top: 5px;
     margin-bottom: 20px;
 }
+
 .addon_documentation h2 {
     font-size: 16px;
     margin-top: 40px;
     text-transform: uppercase;
     margin-bottom: 20px;
     letter-spacing: 0.02em;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #cccccc;
     padding: 13px 15px 10px;
-    background: #eee;
+    background: #eeeeee;
 }
+
 .addon_documentation h3 {
     margin-top: 40px;
     margin-bottom: 5px;
@@ -22,10 +24,11 @@
     margin: 20px 0;
     background: #f3f6fb;
 }
+
 .addon_documentation blockquote h2 {
     margin: -10px -20px 20px;
     background: transparent;
-	border-top: 1px #ccc;
+    border-top: 1px #cccccc;
 }
 
 .addon_documentation ol {
@@ -34,16 +37,19 @@
 
 .addon_documentation ul {
     margin-bottom: 10px;
-	padding-bottom: 5px;;
+    padding-bottom: 5px;;
     padding-left: 16px;
 }
+
 .addon_documentation ul li {
     list-style-type: square;
     list-style-position: outside;
 }
+
 .addon_documentation ul ul {
     padding-top: 5px;
 }
+
 .addon_documentation ul ul li {
     list-style-type: circle;
     list-style-position: outside;
@@ -58,24 +64,26 @@
 
 .addon_documentation hr {
     margin-top: 40px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #dddddd;
 }
 
 .addon_documentation table {
     width: 100%;
     max-width: 100%;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
     margin: 20px 0 30px;
 }
+
 .addon_documentation th {
     background: #f7f7f7;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid #dddddd;
     border-collapse: separate;
 }
+
 .addon_documentation th,
 .addon_documentation td {
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
     padding: 8px;
     line-height: 1.42857143;
     vertical-align: top;
@@ -84,11 +92,12 @@
 
 .addon_documentation a[href^="http://"],
 .addon_documentation a[href^="https://"] {
-    margin-right:5px;
+    margin-right: 5px;
 }
+
 .addon_documentation a[href^="http://"] sup,
 .addon_documentation a[href^="https://"] sup {
-    font-size:0.8em;
+    font-size: 0.8em;
 }
 
 .addon_documentation table tr:hover {
@@ -104,24 +113,128 @@
     margin-bottom: 10px;
     padding-left: 0;
 }
+
 .addon_documentation-navi ul li {
     list-style-type: none;
-    background: #eee;
+    background: #eeeeee;
     padding: 0 15px;
     line-height: 40px;
 }
+
 .addon_documentation-navi ul {
-    background: #fff;
+    background: #ffffff;
     margin-left: -15px;
     margin-right: -15px;
 }
+
 .addon_documentation-navi ul li li {
     list-style-type: none;
-    background: #fff;
+    background: #ffffff;
     line-height: 30px;
 }
+
 .addon_documentation-navi ul li li:before {
-font-family: FontAwesome;
-    content: '\f0a9';
+    font-family: FontAwesome;
+    content: "\f0a9";
     margin-right: 10px;
+}
+
+body.rex-theme-dark .addon_documentation h2 {
+    border-bottom: 1px solid #151c22;
+    background: #151c22;
+}
+
+body.rex-theme-dark .addon_documentation blockquote {
+    background: transparent;
+}
+
+body.rex-theme-dark .addon_documentation blockquote h2 {
+    border-top: 1px #151c22;
+}
+
+body.rex-theme-dark .addon_documentation hr {
+    border-top: 1px solid #151c22;
+}
+
+body.rex-theme-dark .addon_documentation table {
+    border-top: 1px solid #151c22;
+    border-bottom: 1px solid #151c22;
+}
+
+body.rex-theme-dark .addon_documentation th {
+    background: transparent;
+    border-bottom: 2px solid #151c22;
+}
+
+body.rex-theme-dark .addon_documentation th,
+body.rex-theme-dark .addon_documentation td {
+    border: 1px solid #151c22;
+}
+
+body.rex-theme-dark .addon_documentation table tr:hover {
+    background: transparent;
+}
+
+body.rex-theme-dark .addon_documentation-navi ul li {
+    background: #151c22;
+}
+
+body.rex-theme-dark .addon_documentation-navi ul {
+    background: transparent;
+}
+
+body.rex-theme-dark  .addon_documentation-navi ul li ul,
+body.rex-theme-dark .addon_documentation-navi ul li li {
+    background: #202b35;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation h2 {
+        border-bottom: 1px solid #151c22;
+        background: #151c22;
+    }
+
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation blockquote {
+        background: transparent;
+    }
+
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation blockquote h2 {
+        border-top: 1px #151c22;
+    }
+
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation hr {
+        border-top: 1px solid #151c22;
+    }
+
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation table {
+        border-top: 1px solid #151c22;
+        border-bottom: 1px solid #151c22;
+    }
+
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation th {
+        background: transparent;
+        border-bottom: 2px solid #151c22;
+    }
+
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation th,
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation td {
+        border: 1px solid #151c22;
+    }
+
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation table tr:hover {
+        background: transparent;
+    }
+
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation-navi ul li {
+        background: #151c22;
+    }
+
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation-navi ul {
+        background: transparent;
+    }
+
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation-navi ul li ul,
+    body.rex-has-theme:not(.rex-theme-light) .addon_documentation-navi ul li li {
+        background: #202b35;
+    }
 }
