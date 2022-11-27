@@ -261,7 +261,7 @@ class NewsManager
         $posts = $this->getArticleObjectList($limit);
 
         foreach ($posts as $post) {
-            if ($post instanceof NewsManagerArticle) {
+            if ($post instanceof NewsManagerArticle) {!=
                 $newslist .= $post->printArticleTeaser($post, $singleViewArticleId);
             }
         }
@@ -284,7 +284,7 @@ class NewsManager
         $output = '';
         $image = '';
 
-        if ($newsArticle->getId() != null) {
+        if ($newsArticle != null) {
             if ($newsArticle->getImages() != "") {
                 $images = explode(',', $newsArticle->getImages());
 
