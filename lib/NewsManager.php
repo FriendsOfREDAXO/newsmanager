@@ -284,7 +284,7 @@ class NewsManager
         $output = '';
         $image = '';
 
-        if ($newsArticle->getId() != null) {
+        if ($newsArticle != null) {
             if ($newsArticle->getImages() != "") {
                 $images = explode(',', $newsArticle->getImages());
 
