@@ -261,7 +261,7 @@ class NewsManager
         $posts = $this->getArticleObjectList($limit);
 
         foreach ($posts as $post) {
-            if ($post instanceof NewsManagerArticle) {!=
+            if ($post instanceof NewsManagerArticle) {
                 $newslist .= $post->printArticleTeaser($post, $singleViewArticleId);
             }
         }
