@@ -78,7 +78,7 @@ INSERT INTO rex_neues_entry
     (id, status, name, teaser, description, domain_ids, lang_id, publishdate, author_id, url, image, images, createdate, createuser, updatedate, updateuser)
 SELECT 
     pid,
-    IF(status=1, '1', '0'),
+    IF(status=1, '1', '-1'),
     title,
     subtitle,
     richtext,
