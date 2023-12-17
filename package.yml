@@ -23,6 +23,7 @@ requires:
 conflicts:
     packages:
         url: '<=2.0.0'
+        neues: '<4.0.1'
 installer_ignore:
   - .git
   - .github
