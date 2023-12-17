@@ -29,6 +29,7 @@ Wir danken Alex für die Bereitschaft, das Addon in die Hände von FriendsOfREDA
 | Autoren                              | ❌ nein                                      | ✅ `Aktuelles > Autoren`                                    |
 | Beiträge zeitgesteuert veröffentlichen | ❌ nein                                      | ✅ ja                                                     |
 | Mehrsprachigkeit                     | ✅ `News Manager > (Sprache auswählen)`      | ✅ `Aktuelles > Sprachen`                                   |
+| Eigene Felder hinzufügen             | ❌ nein                                      | ✅ ja (via YForm)                                           |
 | Dokumentation                        | ✅ als Plugin                                | ✅ `Aktuelles > Hilfe`                                      |
 | Einstellungen                        | ❌ nein                                      | ✅ `Aktuelles > Einstellungen`                              |
 | WYSIWYG-Editor                       | ✅ ausschließlich `redactor2`                | ✅ frei wählbar (`cke5`, `redactor`, `markitup`, `tinymce`) |
