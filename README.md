@@ -8,11 +8,11 @@
 
 Das FOR-Addon News-Manager befindet sich nicht mehr in aktiver Entwicklung. Es wurde nur noch bis Ende 2022 gewartet. Potentielle Sicherheitslücken werden nicht mehr geschlossen.
 
-Um die Lücke zu schließen, wird das Addon `Neues` von @alexplus_de zu FriendsOfREDAXO gespendet. Die Weiterentwicklung des Neues ist gesichert. Es wird ständig an die neuesten REDAXO-Versionen angepasst und erweitert.
+Um die Lücke zu schließen, wird das Addon `Neues` von [@alexplus_de](https://github.com/alexplusde/) zu FriendsOfREDAXO gespendet. Die Weiterentwicklung des Neues ist gesichert. Es wird ständig an die neuesten REDAXO-Versionen angepasst und erweitert.
 
 Ein wesentlicher Vorteil gegenüber dem News Manager ist die Unterstützung von YForm. Damit lassen sich die News-Einträge und Kategorien komfortabel verwalten und erweitern, viele Funktionen von YForm und YOrm können genutzt werden.
 
-Wir danken Alex für die Bereitschaft, das Addon in die Hände von FriendsOfREDAXO zu geben, Alex bleibt Projekt-Lead des Addons. Sowie @schorschy @skerbis und @eace für die Unterstützung bei der Entwicklung.
+Wir danken Alex für die Bereitschaft, das Addon in die Hände von FriendsOfREDAXO zu geben, Alex bleibt Projekt-Lead des Addons. Sowie [@schorschy](https://github.com/schorschy/) für die Unterstützung bei der Entwicklung.
 
 ### Funktions-Parität und Unterschiede
 
