@@ -1,7 +1,5 @@
-# Alle hier gesetzten Werte können über $addon->getProperty($key) abgefragt werden
-
 package: newsmanager 
-version: '3.0.3'
+version: '3.1.0'
 author: Friends Of REDAXO 
 supportpage: https://github.com/FriendsOfREDAXO/newsmanager/
 
@@ -15,14 +13,17 @@ page:
         settings: { perm: 'newsmanagersettings[]', title: 'translate:settings', icon: rex-icon fa-wrench }
 
 requires:
-    redaxo: '^5.4' # benötigt mindestens REDAXO 5.4
+    redaxo: '^5.15'
     packages:
-        url: '>1.0.0' # benötig Addon redaxo_url V.2
+        neues: '^4'
+        url: '^2'
+        yform: '^4'
     php:
-        version: '>=5.6' # benötigt mindestens PHP 5.6
+        version: '>=7.3'
 conflicts:
     packages:
         url: '<=2.0.0'
+        neues: '<4.0.1'
 installer_ignore:
   - .git
   - .github
