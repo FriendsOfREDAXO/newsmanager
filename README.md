@@ -16,9 +16,9 @@ Wir danken Alex für die Bereitschaft, das Addon in die Hände von FriendsOfREDA
 
 ### Funktions-Parität und Unterschiede
 
-| Was                                  | News Manager `3.0.3`                        | Neues `^4.0`                                               |
-| ------------------------------------ | ------------------------------------------- | ---------------------------------------------------------- |
-| Letzte Weiterentwicklung und Wartung | ❌ 28. Dez. 2022                             | ✅ aktuell                                                |
+| Was                                  | News Manager `3.0.3`                        | Neues `^4.0`                                                  |
+| ------------------------------------ | ------------------------------------------- | ------------------------------------------------------------- |
+| Letzte Weiterentwicklung und Wartung | ❌ 28. Dez. 2022                             | ✅ aktuell                                                  |
 | REDAXO Core-Version                  | ab `^5.4`                                    | ab `^5.15`                                                   |
 | PHP-Version                          | ab `^5.6`                                    | ab `^7.2`                                                    |
 | Addon-Abhängigkeiten                 | URL ab `^2`                                  | URL ab `^2`, YForm ab `^4`, YForm Field ab `^2`              |
@@ -27,15 +27,15 @@ Wir danken Alex für die Bereitschaft, das Addon in die Hände von FriendsOfREDA
 | Kategorien                           | ✅ `News Manager > "Kategorien"`             | ✅ `Aktuelles > Kategorien`                                 |
 | Kommentare                           | ✅ als Plugin: `News Manager > "Kommentare"` | ❌ nein                                                     |
 | Autoren                              | ❌ nein                                      | ✅ `Aktuelles > Autoren`                                    |
-| Beiträge zeitgesteuert veröffentlichen | ❌ nein                                      | ✅ ja                                                     |
+| Beiträge zeitgesteuert veröffentlichen | ❌ nein                                    | ✅ ja                                                       |
 | Mehrsprachigkeit                     | ✅ `News Manager > (Sprache auswählen)`      | ✅ `Aktuelles > Sprachen`                                   |
 | Eigene Felder hinzufügen             | ❌ nein                                      | ✅ ja (via YForm)                                           |
 | Dokumentation                        | ✅ als Plugin                                | ✅ `Aktuelles > Hilfe`                                      |
 | Einstellungen                        | ❌ nein                                      | ✅ `Aktuelles > Einstellungen`                              |
 | WYSIWYG-Editor                       | ✅ ausschließlich `redactor2`                | ✅ frei wählbar (`cke5`, `redactor`, `markitup`, `tinymce`) |
 | Backend-Sprachen                     | ✅`de,en,es,se`                              | ✅ `de,en,es,se,fr,it`                                      |
-| RSS                                  | ✅ ja                                        | 🚧 in Arbeit                                               |
-| Fertige Fragmente                    | ✅ ja                                        | 🚧 in Arbeit                                               |
+| RSS                                  | ✅ ja                                        | ✅ ja                                                       |
+| Fertige Fragmente                    | ✅ ja                                        | ✅ ja                                                       |
 | Multi-Domain-Unterstützung           | ❌ über Umwege                               | ✅ ja                                                       |
 | YOrm-Model                           | ❌ nein                                      | ✅ ja (News-Einträge, Kategorien, Autoren, Sprachen)        |
 | CSV-Import                           | ❌ nein                                      | ✅ ja (via YForm)                                           |
