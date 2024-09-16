@@ -3,7 +3,9 @@
 ⚠️ Der News-Manager wird nicht mehr weiterentwickelt. 
 
 Alternative: [Neues](https://github.com/friendsofredaxo/neues/) 
+
 Bietet alle Funktionen dieses AddOns und mehr. 
+
 Migrationsanleitung weiter unten. 
 
 Dieses AddOn stellt eine einfache Newsverwaltung bereit. Dabei werden die Beiträge in einer eigenen Tabelle abgelegt.
