@@ -2,24 +2,14 @@
 
 ⚠️ Der News-Manager wird nicht mehr weiterentwickelt. 
 
-Dieses AddOn stellt eine einfache Newsverwaltung bereit. Dabei werden die Beiträge in einer eigenen Tabelle abgelegt.
+Alternative: [Neues](https://github.com/friendsofredaxo/neues/) 
+Bietet alle Funktionen dieses AddOns und mehr. 
+Migrationsanleitung weiter unten. 
 
-Nutze stattdessen das Nachfolge-Addon [Neues für REDAXO 5](https://github.com/friendsofredaxo/neues/).
+Dieses AddOn stellt eine einfache Newsverwaltung bereit. Dabei werden die Beiträge in einer eigenen Tabelle abgelegt.
 
 ![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/newsmanager/assets/screenshot.png)
 
-## Lizenz
-
-siehe [LICENSE](https://github.com/FriendsOfREDAXO/newsmanager/blob/master/LICENSE)
-
-## Autor
-
-**Friends Of REDAXO**
-
-* [https://www.redaxo.org](https://www.redaxo.org)
-* [https://github.com/FriendsOfREDAXO]([https://github.com/FriendsOfREDAXO)
-
-<hr>
 
 ## Hinweise zur Migration zum Neues-AddOn
 
@@ -85,4 +75,15 @@ FROM rex_newsmanager
 INNER JOIN rex_newsmanager_categories
 ON FIND_IN_SET(rex_newsmanager_categories.id, REPLACE(REPLACE(rex_newsmanager.newsmanager_category_id, '|', ','), ' ', '')) > 0;
 ```
+
+## Lizenz
+
+siehe [LICENSE](https://github.com/FriendsOfREDAXO/newsmanager/blob/master/LICENSE)
+
+## Autor
+
+**Friends Of REDAXO**
+
+* [https://www.redaxo.org](https://www.redaxo.org)
+* [https://github.com/FriendsOfREDAXO]([https://github.com/FriendsOfREDAXO)
 
