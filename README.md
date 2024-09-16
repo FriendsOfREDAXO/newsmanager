@@ -1,52 +1,36 @@
 # News-Manager
 
-> Der News-Manager wird nicht mehr weiterentwickelt. Nutze stattdessen das Nachfolge-Addon [Neues für REDAXO 5](https://github.com/friendsofredaxo/neues/).
+⚠️ Der News-Manager wird nicht mehr weiterentwickelt. 
 
-## Migration von News-Manager zu Neues
+Dieses AddOn stellt eine einfache Newsverwaltung bereit. Dabei werden die Beiträge in einer eigenen Tabelle abgelegt.
 
-### Warum der Wechsel?
+Nutze stattdessen das Nachfolge-Addon [Neues für REDAXO 5](https://github.com/friendsofredaxo/neues/).
 
-Das FOR-Addon News-Manager befindet sich nicht mehr in aktiver Entwicklung. Es wurde nur noch bis Ende 2022 gewartet. Potentielle Sicherheitslücken werden nicht mehr geschlossen.
+![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/newsmanager/assets/screenshot.png)
 
-Um die Lücke zu schließen, wird das Addon `Neues` von [@alexplus_de](https://github.com/alexplusde/) zu FriendsOfREDAXO gespendet. Die Weiterentwicklung des Neues ist gesichert. Es wird ständig an die neuesten REDAXO-Versionen angepasst und erweitert.
+## Lizenz
 
-Ein wesentlicher Vorteil gegenüber dem News Manager ist die Unterstützung von YForm. Damit lassen sich die News-Einträge und Kategorien komfortabel verwalten und erweitern, viele Funktionen von YForm und YOrm können genutzt werden.
+siehe [LICENSE](https://github.com/FriendsOfREDAXO/newsmanager/blob/master/LICENSE)
 
-Wir danken Alex für die Bereitschaft, das Addon in die Hände von FriendsOfREDAXO zu geben, Alex bleibt Projekt-Lead des Addons. Sowie [@schorschy](https://github.com/schorschy/) für die Unterstützung bei der Entwicklung.
+## Autor
 
-### Funktions-Parität und Unterschiede
+**Friends Of REDAXO**
 
-| Was                                  | News Manager `3.0.3`                        | Neues `^4.0`                                                  |
-| ------------------------------------ | ------------------------------------------- | ------------------------------------------------------------- |
-| Letzte Weiterentwicklung und Wartung | ❌ 28. Dez. 2022                             | ✅ aktuell                                                  |
-| REDAXO Core-Version                  | ab `^5.4`                                    | ab `^5.15`                                                   |
-| PHP-Version                          | ab `^5.6`                                    | ab `^7.2`                                                    |
-| Addon-Abhängigkeiten                 | URL ab `^2`                                  | URL ab `^2`, YForm ab `^4`, YForm Field ab `^2`              |
-| Position im Backend                  | `Addons > News Manager`                      | `Aktuelles` (oben)                                           |
-| News-Übersicht                       | ✅ `News Manager > "News anlegen"`           | ✅ `Aktuelles > Einträge`                                   |
-| Kategorien                           | ✅ `News Manager > "Kategorien"`             | ✅ `Aktuelles > Kategorien`                                 |
-| Kommentare                           | ✅ als Plugin: `News Manager > "Kommentare"` | ❌ nein                                                     |
-| Autoren                              | ❌ nein                                      | ✅ `Aktuelles > Autoren`                                    |
-| Beiträge zeitgesteuert veröffentlichen | ❌ nein                                    | ✅ ja                                                       |
-| Mehrsprachigkeit                     | ✅ `News Manager > (Sprache auswählen)`      | ✅ `Aktuelles > Sprachen`                                   |
-| Eigene Felder hinzufügen             | ❌ nein                                      | ✅ ja (via YForm)                                           |
-| Dokumentation                        | ✅ als Plugin                                | ✅ `Aktuelles > Hilfe`                                      |
-| Einstellungen                        | ❌ nein                                      | ✅ `Aktuelles > Einstellungen`                              |
-| WYSIWYG-Editor                       | ✅ ausschließlich `redactor2`                | ✅ frei wählbar (`cke5`, `redactor`, `markitup`, `tinymce`) |
-| Backend-Sprachen                     | ✅`de,en,es,se`                              | ✅ `de,en,es,se,fr,it`                                      |
-| RSS                                  | ✅ ja                                        | ✅ ja                                                       |
-| Fertige Fragmente                    | ✅ ja                                        | ✅ ja                                                       |
-| Multi-Domain-Unterstützung           | ❌ über Umwege                               | ✅ ja                                                       |
-| YOrm-Model                           | ❌ nein                                      | ✅ ja (News-Einträge, Kategorien, Autoren, Sprachen)        |
-| CSV-Import                           | ❌ nein                                      | ✅ ja (via YForm)                                           |
-| CSV-Export                           | ❌ nein                                      | ✅ ja (via YForm)                                           |
-| RESTful API                          | ❌ nein                                      | ✅ ja (via YForm)                                           |
+* [https://www.redaxo.org](https://www.redaxo.org)
+* [https://github.com/FriendsOfREDAXO]([https://github.com/FriendsOfREDAXO)
+
+<hr>
+
+## Hinweise zur Migration zum Neues-AddOn
 
 ### Automatische Daten-Migration von News Manager zu Neues 4
 
 Es gibt einen eine automatische Migration von News Manager-Einträgen zu Neues 4.
+Diese werden bei Installation dieser finalen Version des News Managers ausgeführt. 
 
-Diese werden bei Installation dieser finalen Version des News Managers ausgeführt. Alternativ müssen folgenden Schritte erfolgen:
+### Manuelle Mifgration 
+
+**Alternativ müssen folgenden Schritte erfolgen:**
 
 ### Manuelle Daten-Migration von News Manager zu Neues 4
 
@@ -102,17 +86,3 @@ INNER JOIN rex_newsmanager_categories
 ON FIND_IN_SET(rex_newsmanager_categories.id, REPLACE(REPLACE(rex_newsmanager.newsmanager_category_id, '|', ','), ' ', '')) > 0;
 ```
 
-![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/newsmanager/assets/screenshot.png)
-
-Dieses AddOn stellt eine einfache Newsverwaltung bereit. Dabei werden die Beiträge in einer eigenen Tabelle abgelegt.
-
-## Lizenz
-
-siehe [LICENSE](https://github.com/FriendsOfREDAXO/newsmanager/blob/master/LICENSE)
-
-## Autor
-
-**Friends Of REDAXO**
-
-* <https://www.redaxo.org>
-* <https://github.com/FriendsOfREDAXO>
