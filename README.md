@@ -85,5 +85,5 @@ siehe [LICENSE](https://github.com/FriendsOfREDAXO/newsmanager/blob/master/LICEN
 **Friends Of REDAXO**
 
 * [https://www.redaxo.org](https://www.redaxo.org)
-* [https://github.com/FriendsOfREDAXO]([https://github.com/FriendsOfREDAXO)
+* [https://github.com/FriendsOfREDAXO](https://github.com/FriendsOfREDAXO)
 
