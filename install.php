@@ -12,6 +12,6 @@ if (rex_metainfo_add_field('Beschreibung', 'med_description', '','class="redacto
     rex_delete_cache();
     echo rex_view::success('Das Meta-Info Feld "Beschreibung" wurde angelegt und der Cache gelöscht!');
 }
-if (!is_dir($addon->getDataPath())) {
-    rex_dir::copy($this->getPath('data'), $this->getDataPath());
+if (!is_dir($addon->getDataPath()) && is_dir($addon->getPath('data'))) {
+    rex_dir::copy($addon->getPath('data'), $addon->getDataPath());
 }
