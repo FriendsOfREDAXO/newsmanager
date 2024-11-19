@@ -4,7 +4,7 @@
 
 ## Migration von News-Manager zu Neues
 
-### Manuelle Daten-Migration von News Manager zu Neues 4
+### Manuelle Daten-Migration
 
 1. Backup der Datenbank und des Dateisystems
 2. `Neues` installieren (`YForm`, `YForm Field`, `URL` müssen bereits installiert und aktiviert sein)
