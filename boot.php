@@ -2,8 +2,8 @@
 
 /** @var rex_addon $this */
 
-// Diese Datei ist keine Pflichdatei mehr.
-// 
+// Diese Datei ist keine Pflichtdatei mehr.
+//
 // Die Datei sollte keine veränderbare Konfigurationen mehr enthalten, um die Updatefähigkeit zu erhalten.
 // Stattdessen sollte dafür die rex_config verwendet werden (siehe install.php)
 
@@ -25,7 +25,7 @@ if (rex::isBackend() && rex::getUser()) {
     // Es wird eine Versionsangabe angehängt, damit nach einem neuen Release des Addons die Datei nicht
     // aus dem Browsercache verwendet, sondern frisch geladen wird
     rex_view::addCssFile($this->getAssetsUrl('css/style.css'));
-    
+
     if (rex_be_controller::getCurrentPagePart(2) == 'main') {
         rex_view::addCssFile($this->getAssetsUrl('bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css'));
         rex_view::addJsFile($this->getAssetsUrl('js/moment-with-locales.min.js'));
