@@ -31,7 +31,3 @@ rex_sql_table::get(rex::getTable('newsmanager_categories'))
     ->ensureColumn(new rex_sql_column('updatedate', 'datetime'))
     ->setPrimaryKey('pid')
     ->ensure();
-
-/* Migrate data from newsmanager to friendsofredaxo\neues */
-$query = rex_file::get(rex_path::addon('newsmanager', 'migration.sql'));
-rex_sql::factory()->setQuery($query);

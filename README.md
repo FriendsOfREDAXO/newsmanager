@@ -1,28 +1,8 @@
 # News-Manager
 
-⚠️ Der News-Manager wird nicht mehr weiterentwickelt. 
+> Der News-Manager wird nicht mehr weiterentwickelt.
 
-Alternative: [Neues](https://github.com/friendsofredaxo/neues/) 
-
-Bietet alle Funktionen dieses AddOns und mehr. 
-
-Migrationsanleitung weiter unten. 
-
-Dieses AddOn stellt eine einfache Newsverwaltung bereit. Dabei werden die Beiträge in einer eigenen Tabelle abgelegt.
-
-![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/newsmanager/assets/screenshot.png)
-
-
-## Hinweise zur Migration zum Neues-AddOn
-
-### Automatische Daten-Migration von News Manager zu Neues 4
-
-Es gibt einen eine automatische Migration von News Manager-Einträgen zu Neues 4.
-Diese werden bei Installation dieser finalen Version des News Managers ausgeführt. 
-
-### Manuelle Mifgration 
-
-**Alternativ müssen folgenden Schritte erfolgen:**
+## Migration von News-Manager zu Neues
 
 ### Manuelle Daten-Migration von News Manager zu Neues 4
 
@@ -77,6 +57,10 @@ FROM rex_newsmanager
 INNER JOIN rex_newsmanager_categories
 ON FIND_IN_SET(rex_newsmanager_categories.id, REPLACE(REPLACE(rex_newsmanager.newsmanager_category_id, '|', ','), ' ', '')) > 0;
 ```
+
+![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/newsmanager/assets/screenshot.png)
+
+Dieses AddOn stellt eine einfache Newsverwaltung bereit. Dabei werden die Beiträge in einer eigenen Tabelle abgelegt.
 
 ## Lizenz
 

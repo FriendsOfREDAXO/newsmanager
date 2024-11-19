@@ -1,6 +1,6 @@
-package: newsmanager 
+package: newsmanager
 version: '3.1.0'
-author: Friends Of REDAXO 
+author: Friends Of REDAXO
 supportpage: https://github.com/FriendsOfREDAXO/newsmanager/
 
 page:
@@ -15,7 +15,6 @@ page:
 requires:
     redaxo: '^5.15'
     packages:
-        neues: '^4'
         url: '^2'
         yform: '^4'
     php:
@@ -23,7 +22,7 @@ requires:
 conflicts:
     packages:
         url: '<=2.0.0'
-        neues: '<4.0.1'
+
 installer_ignore:
   - .git
   - .github
